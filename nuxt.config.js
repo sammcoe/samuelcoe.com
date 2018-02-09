@@ -34,5 +34,8 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  css: [
+    { src: 'bulma/bulma.sass', lang: 'sass' }
+  ]
 }
