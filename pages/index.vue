@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav
-      class="navbar is-primary"
+      class="navbar"
       role="navigation"
       aria-label="main navigation">
       <div class="navbar-brand"/>
@@ -11,6 +11,21 @@
             class="navbar-item"
             to="/">
             Home
+          </nuxt-link>
+          <nuxt-link
+            class="navbar-item"
+            to="/">
+            About
+          </nuxt-link>
+          <nuxt-link
+            class="navbar-item"
+            to="/">
+            What I'm...
+          </nuxt-link>
+          <nuxt-link
+            class="navbar-item"
+            to="/">
+            Recommendations
           </nuxt-link>
         </div>
         <no-ssr>
