@@ -1,6 +1,85 @@
 <template>
   <div>
+    <nav
+      class="navbar"
+      role="navigation"
+      aria-label="main navigation">
+      <div class="navbar-brand">
+        <nuxt-link
+          class="navbar-item"
+          to="/">
+          <img
+            src="~/static/SC_logo.png"
+            alt="Samuel Coe"
+            width="28" 
+            eight="28">
+        </nuxt-link>
+        <button class="button navbar-burger">
+          <span/>
+          <span/>
+          <span/>
+        </button>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <nuxt-link
+            class="navbar-item"
+            to="/">
+            About
+          </nuxt-link>
+          <nuxt-link
+            class="navbar-item"
+            to="/">
+            What I'm...
+          </nuxt-link>
+          <nuxt-link
+            class="navbar-item"
+            to="/">
+            Recommendations
+          </nuxt-link>
+        </div>
+        <no-ssr>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <a
+                    class="button is-info"
+                    data-social-network="Twitter"
+                    href="https://twitter.com/SamuelMcoe">
+                    <span class="icon">
+                      <i class="fab fa-twitter"/>
+                    </span>
+                    <span>Twitter</span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a
+                    class="button"
+                    data-social-network="Github"
+                    href="https://github.com/sammcoe">
+                    <span class="icon">
+                      <i class="fab fa-github"/>
+                    </span>
+                    <span>GitHub</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </no-ssr>
+      </div>
+    </nav>
     <nuxt/>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            Copyright © {{ (new Date).getFullYear() }} Samuel Coe
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
