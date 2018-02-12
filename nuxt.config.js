@@ -36,6 +36,6 @@ module.exports = {
     }
   },
   css: [
-    { src: 'bulma/bulma.sass', lang: 'sass' }
+    { src: '~/assets/mystyles.scss', lang: 'scss' }
   ]
 }

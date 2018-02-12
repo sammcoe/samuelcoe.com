@@ -9,10 +9,9 @@
           class="navbar-item"
           to="/">
           <img
-            src="~/static/SC_logo.png"
+            src="~/static/samuel_coe_logo.png"
             alt="Samuel Coe"
-            width="28" 
-            eight="28">
+            height="28">
         </nuxt-link>
         <button class="button navbar-burger">
           <span/>
