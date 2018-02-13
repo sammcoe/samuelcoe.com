@@ -36,13 +36,13 @@ export default {
 
       // If widget did generate to iframe
       if (ifrm !== null){
-        clearInterval(this.interval);
         var media = ifrm.contentWindow.document.getElementsByClassName('timeline-Tweet-media')[0];
         // then if widget has content with class="timeline-Widget"
         if (media !== undefined){
           // then change background color css for this class
           ifrm.style.height="200px";
           media.style.display="none";
+          clearInterval(this.interval);
         }
       }
       this.loaded = true;

@@ -10,11 +10,11 @@
                   src="~/static/SC_logo_white.png"
                   alt="Samuel Coe"
                   width="200" 
-                  eight="200">
+                  height="200">
               </div>
             </div>
           </div>
-          <div class="column is-three-quarters">
+          <div class="column is-two-thirds header-twit">
             <twitter-feed/>
           </div>
         </div>
@@ -34,7 +34,10 @@
             </div>
             <div class="tile is-parent">
               <article class="tile is-child box">
-                <!-- placeholer -->
+                <github-card
+                  token="84c93925860375a635d65f1b43f2feac6b9431e7"
+                  no-border
+                  bio/>
               </article>
             </div>
           </div>
@@ -71,9 +74,11 @@
 <script>
 import '~/assets/fontawesome-all.js'
 import TwitterFeed from '~/components/TwitterFeed.vue'
+import GithubCard from '~/components/GithubCard.vue'
 
 export default {
   components: {
+    GithubCard,
     TwitterFeed
   }
 }
@@ -88,5 +93,10 @@ export default {
 
 .full-height {
   height: 100%;
+}
+
+.header-twit {
+  padding-left: 400px;
+  padding-right: 200px;
 }
 </style>
