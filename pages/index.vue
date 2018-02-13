@@ -4,11 +4,15 @@
       <div class="hero-body">
         <div class="columns">
           <div class="column">
-            <img
-              src="~/static/SC_logo_white.png"
-              alt="Samuel Coe"
-              width="200" 
-              eight="200">
+            <div class="level full-height">
+              <div class="level-item vcenter">
+                <img
+                  src="~/static/SC_logo_white.png"
+                  alt="Samuel Coe"
+                  width="200" 
+                  eight="200">
+              </div>
+            </div>
           </div>
           <div class="column is-three-quarters">
             <twitter-feed/>
@@ -18,7 +22,7 @@
     </section>
     <section class="section">
       <div class="tile is-ancestor">
-        <div class="tile is-vertical is-8">
+        <div class="tile is-vertical is-10">
           <div class="tile">
             <div class="tile is-parent is-vertical">
               <article class="tile is-child box">
@@ -30,7 +34,7 @@
             </div>
             <div class="tile is-parent">
               <article class="tile is-child box">
-                <!-- Put any content you want -->
+                <!-- placeholer -->
               </article>
             </div>
           </div>
@@ -49,9 +53,14 @@
         </div>
         <div class="tile is-parent">
           <article class="tile is-child box">
-            <img
-              src="~/static/sc_tall_cmp.png"
-              alt="sc tall">
+            <div class="level">
+              <div class="level-item">
+                <img
+                  src="~/static/sc_tall_cmp.png"
+                  alt="sc tall"
+                  width="300px">
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -71,5 +80,13 @@ export default {
 </script>
 
 <style>
+.vcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.full-height {
+  height: 100%;
+}
 </style>
