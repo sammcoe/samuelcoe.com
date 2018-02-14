@@ -1,6 +1,6 @@
 <template>
   <article 
-    v-show="loaded"
+    v-show="loaded || !hideMedia"
     class="media">
     <a
       class="twitter-timeline"
@@ -17,12 +17,20 @@
 
 <script>
 export default {
+  props: {
+    hideMedia: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => ({
     interval: null,
     loaded: false
   }),
   mounted() {
-    this.interval = setInterval(this.hideTwitterMedia, 1000);
+    if(this.hideMedia) {
+      this.interval = setInterval(this.hideTwitterMedia, 1000);
+    }
   },
   methods: {
     hideTwitterMedia() {
