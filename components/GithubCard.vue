@@ -116,16 +116,13 @@
 
 <script>
 import axios from 'axios';
+import gitConfig from '../config/github'
 
 export default {
   props: {
     avatar: {
       type: Boolean,
       default: false
-    },
-    token: {
-      type: String,
-      default: ''
     },
     bio: {
       type: Boolean,
@@ -247,7 +244,7 @@ export default {
         query: query
       }, {
         headers: {
-          Authorization: `Bearer ${this.token}`
+          Authorization: `Bearer ${gitConfig.token}`
         }
       })
     },
