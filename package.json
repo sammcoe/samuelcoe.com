@@ -29,6 +29,7 @@
     "bulma": "^0.6.2",
     "bulma-divider": "^1.0.1",
     "github-card": "^1.2.1",
+    "github-vue": "0.0.6",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {

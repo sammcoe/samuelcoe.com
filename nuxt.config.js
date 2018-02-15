@@ -33,9 +33,15 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: [
+      'github-vue'
+    ]
   },
   css: [
     { src: '~/assets/mystyles.scss', lang: 'scss' }
+  ],
+  plugins: [
+    { src: '~/plugins/github-vue', ssr: false }
   ]
 }

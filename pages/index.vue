@@ -15,8 +15,8 @@
             </div>
           </div>
           <div class="column is-two-thirds header-twit">
-            <github-card
-              token="84c93925860375a635d65f1b43f2feac6b9431e7"
+            <github-vue
+              :token="token"
               avatar
               hireable
               company
@@ -44,14 +44,11 @@
         </div>
         <div class="tile is-parent">
           <article class="tile is-child box">
-            <div class="level">
-              <div class="level-item">
-                <img
-                  src="~/static/sc_tall_cmp.png"
-                  alt="sc tall"
-                  width="300px">
-              </div>
-            </div>
+            <figure class="image">
+              <img
+                src="~/static/sc_tall_cmp.png"
+                alt="sc tall">
+            </figure>
           </article>
         </div>
       </div>
@@ -60,15 +57,17 @@
 </template>
 
 <script>
-import '~/assets/fontawesome-all.js'
-import TwitterFeed from '~/components/TwitterFeed.vue'
-import GithubCard from '~/components/GithubCard.vue'
+import '~/assets/fontawesome-all.js';
+import TwitterFeed from '~/components/TwitterFeed.vue';
+import gitConfig from '../config/github';
 
 export default {
   components: {
-    GithubCard,
     TwitterFeed
-  }
+  },
+  data: () => ({
+    token: gitConfig.token
+  })
 }
 </script>
 
