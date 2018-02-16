@@ -4,7 +4,7 @@
     class="media">
     <a
       class="twitter-timeline"
-      data-tweet-limit="1"
+      data-tweet-limit="5"
       data-height="200"
       data-chrome="noheader nofooter noborders"
       href="https://twitter.com/SamuelMcoe?ref_src=twsrc%5Etfw"/>

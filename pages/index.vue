@@ -43,13 +43,7 @@
           </div>
         </div>
         <div class="tile is-parent">
-          <article class="tile is-child box">
-            <figure class="image">
-              <img
-                src="~/static/sc_tall_cmp.png"
-                alt="sc tall">
-            </figure>
-          </article>
+          <article class="tile is-child box"/>
         </div>
       </div>
     </section>
