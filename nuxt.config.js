@@ -39,7 +39,8 @@ module.exports = {
     ]
   },
   css: [
-    { src: '~/assets/mystyles.scss', lang: 'scss' }
+    { src: '~/assets/mystyles.scss', lang: 'scss' },
+    '~/assets/main.css'
   ],
   plugins: [
     { src: '~/plugins/github-vue', ssr: false }

@@ -23,7 +23,7 @@
         <div class="navbar-start">
           <nuxt-link
             class="navbar-item"
-            to="/">
+            to="/about">
             About
           </nuxt-link>
           <nuxt-link
