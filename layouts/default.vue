@@ -9,7 +9,7 @@
           class="navbar-item"
           to="/">
           <img
-            src="~/static/samuel_coe_logo.png"
+            src="~/static/SC_logo.svg"
             alt="Samuel Coe"
             height="28">
         </nuxt-link>
