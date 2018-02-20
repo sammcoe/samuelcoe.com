@@ -33,7 +33,7 @@
           </nuxt-link>
           <nuxt-link
             class="navbar-item"
-            to="/blog">
+            to="/blog-posts">
             blog
           </nuxt-link>
         </div>
