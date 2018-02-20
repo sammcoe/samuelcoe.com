@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h1 class="title">{{ post.attributes.title }}</h1>
+    <h1 class="title">{{ post.title }}</h1>
     <br>
     <small><i class="el-icon-date"/>{{ createdAt }}</small>
     <div v-html="postFile"/>
@@ -8,11 +8,12 @@
 </template>
 
 <script>
-  import {format} from 'date-fns'
+  import {format} from 'date-fns';
+  import { mapMutations } from 'vuex';
   
   export default {
     fetch ({store, params}) {
-      store.dispatch('posts/loadPost', params.post)
+      store.dispatch('posts/loadPost', params.post);
     },
     head () {
       return {
@@ -21,19 +22,18 @@
     },
     computed: {
       post () {
-        return this.$store.getters.getPost
+        return this.$store.state.posts.post;
       },
       postFile () {
         if (this.post.filename) {
-          return require(`./${this.post.filename}`)
+          return require(`./${this.post.filename}`);
         }
       },
       createdAt () {
-        return format(new Date(this.post.created), 'MMMM Do[,] YYYY')
+        return format(new Date(this.post.created), 'MMMM Do[,] YYYY');
       },
       postTitle () {
-        console.log(this.$store.getters.getPost)
-        return `Blog :: ${this.post.attributes.title}`
+        return `Samuel Coe Blog :: ${this.post.title}`;
       }
     }
   }

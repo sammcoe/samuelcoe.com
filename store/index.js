@@ -9,6 +9,7 @@ export const actions = {
 
       const posts = files.map((file) => {
         let post = fm(fs.readFileSync(`pages/blog/${file}`, 'utf8'));
+        post.title = file.replace(/_/, ' ').replace(/\.md$/, '')
         post.filename = file;
         post.created = new Date(fs.statSync(`pages/blog/${file}`).ctime);
         post.slug = slugify(file.replace(/\.md$/, ''), {lower: true});

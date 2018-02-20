@@ -67,22 +67,9 @@
 </template>
 
 <script>
-import '~/assets/fontawesome-all.js';
-import TwitterFeed from '~/components/TwitterFeed.vue';
-import gitConfig from '../config/github';
 
-export default {
-  components: {
-    TwitterFeed
-  },
-  data: () => ({
-    token: gitConfig.token
-  })
-}
 </script>
 
 <style>
-.header-image {
 
-}
 </style>

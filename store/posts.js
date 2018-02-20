@@ -3,12 +3,6 @@ export const state = () => ({
   post: {}
 })
 
-export const getters = {
-  getPost: state => {
-    return state.post;
-  }
-}
-  
 export const mutations = {
   add (state, name) {
     state.posts.push({
