@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: About Me 2
 description: I am from, and still resident to, a small town in Illinois called Marion. Growing up in a rural, small town environment instilled in me a love of peace and the country, but also a desire for bigger, more exciting things.
 ---
 

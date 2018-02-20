@@ -55,5 +55,8 @@ module.exports = {
         return '/blog/' + require('slugify')(file.replace(/\.md$/, ''));
       });
     }
+  },
+  markdownit: {
+    injected: true
   }
 }

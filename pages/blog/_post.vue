@@ -1,14 +1,14 @@
 <template>
   <div class="content">
-    <h1 class="title">{{ post.title }}</h1>
+    <h1 class="title">{{ post.attributes.title }}</h1>
     <br>
     <small><i class="el-icon-date"/>{{ createdAt }}</small>
-    <div v-html="postFile"/>
+    <div v-html="$md.render(post.body)"/>
   </div>
 </template>
 
 <script>
-  import {format} from 'date-fns';
+  import { format } from 'date-fns';
   import { mapMutations } from 'vuex';
   
   export default {
@@ -24,16 +24,11 @@
       post () {
         return this.$store.state.posts.post;
       },
-      postFile () {
-        if (this.post.filename) {
-          return require(`./${this.post.filename}`);
-        }
-      },
       createdAt () {
         return format(new Date(this.post.created), 'MMMM Do[,] YYYY');
       },
       postTitle () {
-        return `Samuel Coe Blog :: ${this.post.title}`;
+        return `Samuel Coe Blog :: ${this.post.attributes.title}`;
       }
     }
   }
