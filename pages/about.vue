@@ -1,17 +1,19 @@
 <template>
-  <div>
+  <div class="has-navbar-fixed-top">
     <section class="hero is-bold is-primary">
       <div class="hero-body">
-        <img
-          class="transparent invert"
-          src="~/static/samuel_coe_logo.svg"
-          alt="Samuel Coe"
-          width="25%">
-      </div>
-    </section>
-    <section class="hero is-bold is-dark">
-      <div class="hero-body">
-        <h1 class="title">About</h1>
+        <div class="level">
+          <p class="level-item">
+            <img
+              style="height: 50px;"
+              class="transparent invert"
+              src="~/static/samuel_coe_logo.svg"
+              alt="Samuel Coe">
+          </p>
+          <p class="level-item title is-1 has-text-centered">
+            about
+          </p>
+        </div>
       </div>
     </section>
     <section class="section">
@@ -23,8 +25,8 @@
               <div class="tile is-child vcenter">
                 <section class="hero is-primary">
                   <div class="hero-body">
+                    <p class="subtitle">In case coming to my website hasn't already told you this about me, my name is Samuel Coe.</p>
                     <h1 class="title">I go by Sam.</h1>
-                    <article class="subtitle">In case coming to my website hasn't already told you this about me, my name is Samuel Coe.</article>
                   </div>
                 </section>
               </div>
@@ -66,10 +68,3 @@
   </div>
 </template>
 
-<script>
-
-</script>
-
-<style>
-
-</style>

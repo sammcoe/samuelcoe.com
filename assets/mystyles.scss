@@ -4,15 +4,15 @@
 
 // 2. Set your own initial variables
 // Add pink and its invert
-$sc-red: #f7df1e;
-$sc-red-invert: findColorInvert($sc-red);
+$vue-green: #4DBA87;
+$vue-green-invert: findColorInvert($vue-green);
 // Add a serif family
 //$family-serif: "Merriweather", "Georgia", serif;
 
 // 3. Set the derived variables
 // Use the new pink as the primary color
-$primary: $sc-red;
-$primary-invert: $sc-red-invert;
+$primary: $vue-green;
+$primary-invert: $vue-green-invert;
 // Use the existing orange as the danger color
 $danger: $orange;
 // Use the new serif family
@@ -34,6 +34,18 @@ $addColors: (
   "github": ($github, $github-invert)
 );
 $colors: map-merge($colors, $addColors);
+
+// Fix Navbar
+$navbar-height: 3.25rem !default;
+div.has-navbar-fixed-top {
+  padding-top: $navbar-height
+}
+div.has-navbar-fixed-top-touch {
+  padding-top: $navbar-height
+}
+div.has-navbar-fixed-top-desktop {
+  padding-top: $navbar-height
+}   
 
 // 6. Import the rest of Bulma
 @import "../node_modules/bulma/bulma.sass";

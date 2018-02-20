@@ -55,6 +55,6 @@ export default {
   border-radius: 100%;
   width: 1em;
   height: 1em;
-  background-color: #f7df1e;
+  background-color: #4DBA87;
 }
 </style>

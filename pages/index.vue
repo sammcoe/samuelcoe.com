@@ -1,13 +1,11 @@
 <template>
-  <html
-    class="has-navbar-fixed-top"
-    style="overflow-y: hidden;">
+  <div class="has-navbar-fixed-top">
     <section class="hero is-bold is-primary">
       <div class="hero-body main-banner">
         <div class="columns">
           <div class="column is-half vcenter">
             <img
-              class="logo"
+              class="invert"
               src="~/static/samuel_coe_logo.svg"
               alt="Samuel Coe"
               width="100%">
@@ -70,7 +68,7 @@
         </div>
       </div>
     </section>
-  </html>
+  </div>
 </template>
 
 <script>

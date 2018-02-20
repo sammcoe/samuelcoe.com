@@ -24,17 +24,17 @@
           <nuxt-link
             class="navbar-item"
             to="/about">
-            About
+            about
           </nuxt-link>
           <nuxt-link
             class="navbar-item"
             to="/recommendations">
-            Recommendations
+            recommendations
           </nuxt-link>
           <nuxt-link
             class="navbar-item"
             to="/blog">
-            Blog
+            blog
           </nuxt-link>
         </div>
         <no-ssr>
