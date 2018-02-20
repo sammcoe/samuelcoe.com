@@ -44,5 +44,16 @@ module.exports = {
   ],
   plugins: [
     { src: '~/plugins/github-vue', ssr: false }
-  ]
+  ],
+  modules: [
+    '@nuxtjs/markdownit'
+  ],
+  // Generate routes based of top-level file names for blog posts
+  generate: {
+    routes: function () {
+      return require('fs').readdirSync('pages/blog').map(function (file) {
+        return '/blog/' + require('slugify')(file.replace(/\.md$/, ''));
+      });
+    }
+  }
 }

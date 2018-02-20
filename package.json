@@ -25,12 +25,15 @@
     ]
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.0",
     "axios": "^0.17.1",
     "bulma": "^0.6.2",
     "bulma-divider": "^1.0.1",
-    "github-card": "^1.2.1",
+    "date-fns": "^1.29.0",
+    "front-matter": "^2.3.0",
     "github-vue": "0.0.6",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "slugify": "^1.2.9"
   },
   "devDependencies": {
     "ava": "^0.25.0",
