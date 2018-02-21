@@ -8,7 +8,7 @@
         :key="post.attributes.title">
         <div class="tile is-parent">
           <div class="tile is-child is-2 vcenter">
-            <div class="is-centered post-image has-text-centered vcenter">
+            <div class="post-image">
               {{ post.attributes.badge }}
             </div>
           </div>
@@ -61,12 +61,17 @@ export default {
 }
 
 .post-image {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 5px;
   background-color: #4DBA87;
-  font-weight: bold;
-  font-size: 2em;
+  font-weight: light;
+  font-size: 3em;
   color: white;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 15px; 
 }
 </style>
