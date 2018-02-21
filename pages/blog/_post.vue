@@ -12,7 +12,7 @@
               src="~/static/samuel_coe_logo.svg"
               alt="Samuel Coe">
           </p>
-          <p class="level-item title is-1 has-text-centered">
+          <p class="level-item title is-1 has-text-centered has-text-weight-light">
             blog
           </p>
         </div>
@@ -27,8 +27,8 @@
               <div class="tile is-child vcenter">
                 <section class="hero is-primary">
                   <div class="hero-body">
-                    <h1 class="title">{{ post.attributes.title }}</h1>
-                    <p class="subtitle">{{ createdAt }}</p>
+                    <h1 class="title has-text-weight-light">{{ post.attributes.title }}</h1>
+                    <p class="has-text-weight-light">{{ createdAt }}</p>
                   </div>
                 </section>
               </div>

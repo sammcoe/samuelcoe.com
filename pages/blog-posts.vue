@@ -10,7 +10,7 @@
               src="~/static/samuel_coe_logo.svg"
               alt="Samuel Coe">
           </p>
-          <p class="level-item title is-1 has-text-centered">
+          <p class="level-item title is-1 has-text-centered has-text-weight-light">
             blog
           </p>
         </div>

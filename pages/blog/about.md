@@ -1,6 +1,7 @@
 ---
 title: About Me
 description: I am from, and still resident to, a small town in Illinois called Marion. Growing up in a rural, small town environment instilled in me a love of peace and the country, but also a desire for bigger, more exciting things.
+badge: SC
 ---
 
 I am from, and still resident to, a small town in Illinois called Marion. Growing up in a rural, small town environment instilled in me a love of peace and the country, but also a desire for bigger, more exciting things. As I get older, I'm less inclined towards the city-pull that I once felt so strongly. Maybe it's because of the high levels of stress that I've already subjected myself to. Maybe it's simply because of changes in my life or getting older itself. I've also come to understand myself more-- I hate crowds.

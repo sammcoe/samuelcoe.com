@@ -7,12 +7,14 @@
         v-for="post in posts"
         :key="post.attributes.title">
         <div class="tile is-parent">
-          <div class="tile is-child is-1 vcenter">
-            <div class="is-centered post-dot is-primary"/>
+          <div class="tile is-child is-2 vcenter">
+            <div class="is-centered post-image has-text-centered vcenter">
+              {{ post.attributes.badge }}
+            </div>
           </div>
           <div class="tile is-child">
-            <h1 class="title">{{ post.attributes.title }}</h1>
-            <div class="subtitle is-size-6 has-text-grey">{{ formatDate(post) }}</div>
+            <h1 class="has-text-weight-semibold">{{ post.attributes.title }}</h1>
+            <div class="has-text-weight-light has-text-grey">{{ formatDate(post) }}</div>
             <div>
               {{ post.attributes.description }}
             </div>
@@ -56,5 +58,15 @@ export default {
   width: 1em;
   height: 1em;
   background-color: #4DBA87;
+}
+
+.post-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: #4DBA87;
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
 }
 </style>
