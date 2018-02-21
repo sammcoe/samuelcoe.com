@@ -6,7 +6,7 @@
           <p class="level-item">
             <img
               style="height: 50px;"
-              class="transparent invert"
+              class="header-logo-secondary"
               src="~/static/samuel_coe_logo.svg"
               alt="Samuel Coe">
           </p>
@@ -43,3 +43,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.header-logo-secondary {
+  filter: invert(1) opacity(.3);
+  -webkit-filter: invert(1) opacity(.3);
+}
+</style>

@@ -117,6 +117,11 @@ export default {
   filter: opacity(.3);
 }
 
+.header-logo-secondary {
+  filter: invert(1) opacity(.3);
+  -webkit-filter: invert(1) opacity(.3);
+}
+
 .main-banner {
   padding: 1.5rem 1.5rem;
 }
