@@ -37,6 +37,11 @@
                   <div v-html="$md.render(post.body)"/>
                 </div>
               </div>
+              <div class="tile is-child comments">
+                <vue-disqus
+                  shortname="samuelcoe"
+                  :identifier="disqusId"/>
+              </div>
             </div>
           </div>
         </div>
@@ -51,8 +56,12 @@
 <script>
   import { format } from 'date-fns';
   import { mapMutations } from 'vuex';
+  import VueDisqus from 'vue-disqus/VueDisqus.vue'
   
   export default {
+    components: {
+      VueDisqus
+    },
     fetch ({store, params}) {
       store.dispatch('posts/loadPost', params.post);
     },
@@ -72,6 +81,9 @@
         if (this.post) {
           return `Samuel Coe Blog :: ${this.post.attributes.title}`;
         }
+      },
+      disqusId () {
+        return `${process.env.NODE_ENV}-samuelcoe-${this.post.attributes.title.replace(/ /g, '_')}`
       }
     }
   }

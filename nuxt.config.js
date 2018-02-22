@@ -57,6 +57,9 @@ module.exports = {
     }
   },
   markdownit: {
-    injected: true
+    injected: true,
+    highlight: function (code) {
+      return require('highlight.js').highlightAuto(code).value;
+    }
   }
 }
