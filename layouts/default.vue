@@ -37,36 +37,34 @@
             blog
           </nuxt-link>
         </div>
-        <no-ssr>
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a
-                    class="button is-info"
-                    data-social-network="Twitter"
-                    href="https://twitter.com/SamuelMcoe">
-                    <span class="icon">
-                      <i class="fab fa-twitter"/>
-                    </span>
-                    <span>Twitter</span>
-                  </a>
-                </p>
-                <p class="control">
-                  <a
-                    class="button"
-                    data-social-network="Github"
-                    href="https://github.com/sammcoe">
-                    <span class="icon">
-                      <i class="fab fa-github"/>
-                    </span>
-                    <span>GitHub</span>
-                  </a>
-                </p>
-              </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a
+                  class="button is-info"
+                  data-social-network="Twitter"
+                  href="https://twitter.com/SamuelMcoe">
+                  <fa
+                    prefix="fab"
+                    icon="faTwitter"/>
+                  <span>Twitter</span>
+                </a>
+              </p>
+              <p class="control">
+                <a
+                  class="button"
+                  data-social-network="Github"
+                  href="https://github.com/sammcoe">
+                  <fa
+                    prefix="fab"
+                    icon="faGithub"/>
+                  <span>GitHub</span>
+                </a>
+              </p>
             </div>
           </div>
-        </no-ssr>
+        </div>
       </div>
     </nav>
     <nuxt/>

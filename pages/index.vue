@@ -20,7 +20,9 @@
           <div class="tile">
             <div class="tile is-parent is-4">
               <article class="tile is-child box">
-                <twitter-feed/>
+                <no-ssr>
+                  <twitter-feed/>
+                </no-ssr>
               </article>
             </div>
             <div class="tile is-parent">
@@ -72,7 +74,6 @@
 </template>
 
 <script>
-import '~/assets/fontawesome-all.js';
 import BlogList from '~/components/BlogList.vue';
 import TwitterFeed from '~/components/TwitterFeed.vue';
 import gitConfig from '../config/github';

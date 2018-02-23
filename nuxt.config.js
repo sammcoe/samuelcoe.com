@@ -35,7 +35,8 @@ module.exports = {
       }
     },
     vendor: [
-      'github-vue'
+      'github-vue',
+      'fontawesome-vue'
     ]
   },
   css: [
@@ -43,7 +44,8 @@ module.exports = {
     '~/assets/main.css'
   ],
   plugins: [
-    { src: '~/plugins/github-vue', ssr: false }
+    { src: '~/plugins/github-vue', ssr: false },
+    { src: '~/plugins/fontawesome-vue', ssr: true }
   ],
   modules: [
     '@nuxtjs/markdownit'
@@ -58,8 +60,8 @@ module.exports = {
   },
   markdownit: {
     injected: true,
-    highlight: function (code) {
-      return require('highlight.js').highlightAuto(code).value;
-    }
+    use: [
+      'markdown-it-highlightjs'
+    ]
   }
 }
