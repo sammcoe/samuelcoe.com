@@ -19,7 +19,7 @@ Another change that came along with Font Awesome 5 is the seperation of differen
 
 # 2. Install the Packages
 For this example, I'll install Font Awesome with the Solid and Brand packs.
-``` sh
+``` bash
 npm i --save @fortawesome/fontawesome
 npm i --save @fortawesome/fontawesome-free-brands
 npm i --save @fortawesome/fontawesome-free-solid

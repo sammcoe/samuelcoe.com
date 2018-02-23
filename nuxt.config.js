@@ -41,7 +41,8 @@ module.exports = {
   },
   css: [
     { src: '~/assets/mystyles.scss', lang: 'scss' },
-    '~/assets/main.css'
+    { src: '~/assets/main.css', lang: 'css' },
+    { src: '~/node_modules/highlight.js/styles/hopscotch.css', lang: 'css' }
   ],
   plugins: [
     { src: '~/plugins/github-vue', ssr: false },
