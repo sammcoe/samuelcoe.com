@@ -12,12 +12,14 @@ For those unfamiliar with SVG's (Scalable Vector Graphics), they define vector-b
 
 With the new SVG implementation of Font Awesome, it is now possilbe to use SSR (Server-Side Rendering) to render the icons on the server, saving load-time on the client side.  This is an awesome step forward and makes implementation using Nuxt, which specializes in SSR and static-generated content, better than ever.
 
-Onto the good bits:
+Now, the reason SSR is an issue with traditional FA implementation is that  the virtual DOM that's renderd on the server doesn't match the DOM that is rendered on the client.  The reason this occurs is because the `<i/>` tag gets replaced on the client with the actual `<svg/>`, rather than getting pre-build on the server. Thankfully, Font Awesome 5 provides an API to programmatically render the SVG's during SSR.
 
-# 1. Decide Which Style Packs You Want
+Onto the good bits.
+
+## 1. Decide Which Style Packs You Want
 Another change that came along with Font Awesome 5 is the seperation of different icon styles into individual sets: Font Awesome Brands, Font Awesome Solid, Font Awesome Regular, Font Awesome Light. You can find a good representation of all the the changes [here](https://fontawesome.com/how-to-use/upgrading-from-4).  Make a note of the packages that you want to include in your project.
 
-# 2. Install the Packages
+## 2. Install the Packages
 For this example, I'll install Font Awesome with the Solid and Brand packs.
 ``` bash
 npm i --save @fortawesome/fontawesome
@@ -25,7 +27,7 @@ npm i --save @fortawesome/fontawesome-free-brands
 npm i --save @fortawesome/fontawesome-free-solid
 ```
 
-# 3. Add the Packages to Your nuxt.config.js
+## 3. Add the Packages to Your nuxt.config.js
 Next, you will need to include the packages you just installed in the `vendor` config portion of your Nuxt config.  This imports them into the project globally and allows them to be used throughout the application without duplicating code.
 ``` js
 module.exports = {
@@ -40,10 +42,109 @@ module.exports = {
 }
 ```
 
-# 4. Use the Icons
-Icon usage is exactly how you would expect, unless you're coming from older versions of Font Awesome.  Once again, I recommend you review the changes.  Using the icons now requires a prefix that denotes the package where the icon is found.
+## 4. Use the Icons
+This is where things take a bit of an unfamiliar turn.  I recommend also reading about SSR and FA5 directly from the [Font Awesome website](https://fontawesome.com/how-to-use/server-side-rendering)
+
+You won't be able to use the icons like this without having an error thrown at you in your browser:
 ``` html
 <i class="fab fa-github"/>
 <i class="fab fa-twitter"/>
 ```
 
+Instead, you will need to use the FA API to retrive the SVG HTML for the icon you want to use and inject it into the DOM programmatically.
+For example:
+``` html
+<!-- A simple span tag, using Vue's HTML injection via v-html -->
+<span v-html="htmlForYourIcon"/>
+```
+``` js
+import fontawesome from '@fortawesome/fontawesome'
+import yourIcon from '@fortawesome/fontawesome-free-solid/yourIcon'
+
+export default {
+  data: () => ({
+    htmlForYourIcon: fontawesome.icon(yourIcon).html[0];
+  })
+}
+```
+You can even take this and expound upon it to dynamically require the icon you want to use and render it with a little more abstraction. Using `fa-twitter` as an example:
+``` html
+<!-- A simple span tag, using Vue's HTML injection via v-html -->
+<span v-html="renderIcon('fab', 'faTwitter'"/>
+```
+``` js
+import fontawesome from '@fortawesome/fontawesome'
+
+export default {
+  methods: {
+    renderIcon(prefix, icon) {
+      if (this.prefix === 'fab') {
+        return fontawesome.icon(require(`@fortawesome/fontawesome-free-brands/${this.icon}`)).html[0];
+      } else if (this.prefix === 'fas') {
+        return fontawesome.icon(require(`@fortawesome/fontawesome-free-solid/${this.icon}`)).html[0];
+      } else if (this.prefix === 'far') {
+        return fontawesome.icon(require(`@fortawesome/fontawesome-free-regular/${this.icon}`)).html[0];
+      }
+    }
+  }
+}
+```
+The problem with this is how complicated it is to reuse across multiple components; this is a lot less straight-forward than what most are accustomed to for rendering a simple Font Awesome icon.
+
+## 5. fontawesome-vue
+I didn't like this at all so, using the ideas I just went over, I created a [Vue plugin called fontawesome-vue](https://github.com/sammcoe/fontawesome-vue) that works nicely with Nuxt--or any Vue application--for doing just this, far more simply.
+
+From the documentation:
+
+### Installation
+`npm install fontawesome-vue`
+
+### Usage
+Placing the component into a Vue application is as simple as importing it:
+`import fa from 'fontawesome-vue'`
+and adding the tag:
+`<fa prefix="fab" icon="faTwitter"/>`
+
+
+#### prefix
+Font Awesome 5 has seperated the icons into distinct icon packs, they are:
+###### Font Awesome Solid - fas
+###### Font Awesome Brands - fab
+###### Font Awesome Regular - far
+
+
+#### icon
+The icon attribute simply takes the name of the icon you want to use, as it appears in the Font Awesome libarary-- with one exception.
+Instead of kebab case, use camel case.  For example:
+`faTwitter` instead of `fa-twitter`
+
+### Nuxt
+This package was developed specifically with Nuxt in mind.  Setup in a Nuxt project as a plugin is quick and straightforward.
+
+#### 1. Plugin File
+Create a file in `~/plugins` called `fontawesome-vue.js` and add these lines of code:
+```
+import Vue from 'vue';
+import fa from 'fontawesome-vue';
+
+Vue.use(fa);
+```
+
+#### 2. Nuxt Config
+Add the following `vendor` and `plugins` pieces to your `nuxt.config.js` files:
+```
+module.exports = {
+  ...
+  build: {
+    ...
+    vendor: ['fontawesome-vue']
+  },
+  plugins: ['~/plugins/fontawesome-vue']
+  ...
+}
+```
+
+You will now be able to use the `fa` component throughout your application.
+
+
+Thanks for taking the time to read this-- I hope it helps save somebody a lot of time and headache.  Please feel free to comment below if you have any thoughts or ideas that I may have missed.
