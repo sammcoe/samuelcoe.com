@@ -45,9 +45,9 @@
                   class="button is-info"
                   data-social-network="Twitter"
                   href="https://twitter.com/SamuelMcoe">
-                  <fa
-                    prefix="fab"
-                    icon="faTwitter"/>
+                  <span class="icon">
+                    <fa :icon="['fab', 'twitter']"/>
+                  </span>
                   <span>Twitter</span>
                 </a>
               </p>
@@ -56,9 +56,9 @@
                   class="button"
                   data-social-network="Github"
                   href="https://github.com/sammcoe">
-                  <fa
-                    prefix="fab"
-                    icon="faGithub"/>
+                  <span class="icon">
+                    <fa :icon="['fab', 'github']"/>
+                  </span>
                   <span>GitHub</span>
                 </a>
               </p>

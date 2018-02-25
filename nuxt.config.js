@@ -21,6 +21,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    analyze: true,
     /*
     ** Run ESLint on save
     */
@@ -32,11 +33,14 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      } else {
+        config.resolve.alias['vue'] = 'vue/dist/vue.min'
       }
+      config.resolve.alias['@fortawesome/fontawesome-free-brands$'] = '@fortawesome/fontawesome-free-brands/shakable.es.js'
+      config.resolve.alias['@fortawesome/fontawesome-free-solid$'] = '@fortawesome/fontawesome-free-solid/shakable.es.js'
     },
     vendor: [
-      'github-vue',
-      'fontawesome-vue'
+      'github-vue'
     ]
   },
   css: [
@@ -46,10 +50,19 @@ module.exports = {
   ],
   plugins: [
     { src: '~/plugins/github-vue', ssr: false },
-    { src: '~/plugins/fontawesome-vue', ssr: true }
+    // { src: '~/plugins/fontawesome-vue', ssr: false }
   ],
   modules: [
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    [ 'nuxt-fontawesome', {
+      component: 'fa',
+      imports: [
+        {
+          set: '@fortawesome/fontawesome-free-brands',
+          icons: ['faTwitter', 'faGithub']
+        }
+      ]
+    }]
   ],
   // Generate routes based of top-level file names for blog posts
   generate: {

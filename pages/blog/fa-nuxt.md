@@ -90,62 +90,71 @@ export default {
   }
 }
 ```
-The problem with this is how complicated it is to reuse across multiple components; this is a lot less straight-forward than what most are accustomed to for rendering a simple Font Awesome icon.
 
-## 5. fontawesome-vue
 I didn't like this at all so, using the ideas I just went over, I created a [Vue plugin called fontawesome-vue](https://github.com/sammcoe/fontawesome-vue) that works nicely with Nuxt--or any Vue application--for doing just this, far more simply.
 
-From the documentation:
+The problem with this is in how Nuxt bundles with Webpack.  I couldn't get the dynamic importing, which is relatively new functionality, to properly chunk the bundles and instead ended up with the entire icon libraries in my Nuxt vendor bundle.  
+
+I'll easily admit that I don't know enough and couldn't find enough on the subject to even prove to myself that I wanted work through the problem, so that's when I went for the [Nuxt Fontawesome](https://github.com/vaso2/nuxt-fontawesome) module.
+
+## 5. Nuxt Fontawesome
+This module requires a little more configuration than I had in mind for the plugin I created, but it gets the job accomplished with a fairly effecient final result.
 
 ### Installation
-`npm install fontawesome-vue`
-
-### Usage
-Placing the component into a Vue application is as simple as importing it:
-`import fa from 'fontawesome-vue'`
-and adding the tag:
-`<fa prefix="fab" icon="faTwitter"/>`
-
-
-#### prefix
-Font Awesome 5 has seperated the icons into distinct icon packs, they are:
-###### Font Awesome Solid - fas
-###### Font Awesome Brands - fab
-###### Font Awesome Regular - far
-
-
-#### icon
-The icon attribute simply takes the name of the icon you want to use, as it appears in the Font Awesome libarary-- with one exception.
-Instead of kebab case, use camel case.  For example:
-`faTwitter` instead of `fa-twitter`
-
-### Nuxt
-This package was developed specifically with Nuxt in mind.  Setup in a Nuxt project as a plugin is quick and straightforward.
-
-#### 1. Plugin File
-Create a file in `~/plugins` called `fontawesome-vue.js` and add these lines of code:
-```
-import Vue from 'vue';
-import fa from 'fontawesome-vue';
-
-Vue.use(fa);
+``` bash
+npm i nuxt-fontawesome
 ```
 
-#### 2. Nuxt Config
-Add the following `vendor` and `plugins` pieces to your `nuxt.config.js` files:
-```
-module.exports = {
-  ...
+### Configuration
+Add the `nuxt-fontawesome` module to your `nuxt.config.js` file as follows:
+
+``` js
+{
+  modules: [
+    'nuxt-fontawesome',
+    //OR like this
+    ['nuxt-fontawesome', {
+      component: 'fa', 
+      imports: [
+        //import whole set
+        {
+          set: '@fortawesome/fontawesome-free-solid'
+        },
+        //import 2 icons from set 
+        // please note this is PRO set in this example, 
+        // you must have it in your node_modules to actually import
+        {
+          set: '@fortawesome/fontawesome-free-brands',
+          icons: ['faTwitter', 'faGithub']
+        }
+      ]
+    }]
+  ],
+  //alternative place for config
+  fontawesome: {
+    imports: [
+      ...
+    ]
+  }
+  //Tree shaking, you can omit this, but then webpack will include whole package  
   build: {
-    ...
-    vendor: ['fontawesome-vue']
-  },
-  plugins: ['~/plugins/fontawesome-vue']
-  ...
+    extend (config) {
+      config.resolve.alias['@fortawesome/fontawesome-free-brands$'] = '@fortawesome/fontawesome-free-brands/shakable.es.js'
+      config.resolve.alias['@fortawesome/fontawesome-free-solid$'] = '@fortawesome/fontawesome-free-solid/shakable.es.js'
+    }
+  }
 }
 ```
 
-You will now be able to use the `fa` component throughout your application.
+Two things I would make special note of:
+1. The compponent naming option (`component: 'fa'`).  This allows you to succinctly use the component in this fashion, given the example config:
+``` html 
+<fa :icon="['fab', 'twitter']"/>
+```
+2.  Corresponding back to the first point, take notice that the icon name is 'twitter' rather than 'faTwitter' as you might expect.
+3.  I highly recommend not to skip the the tree shaking portion.  This is the entire reason I used this module over the plugin I created and it reduces your bundle size dramatically.
+
+That's it-- you will now be able to use the `fa` component throughout your application.
 
 
 Thanks for taking the time to read this-- I hope it helps save somebody a lot of time and headache.  Please feel free to comment below if you have any thoughts or ideas that I may have missed.
