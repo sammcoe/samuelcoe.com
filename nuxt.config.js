@@ -3,6 +3,9 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    env: {
+      gitToken: process.env.GIT_TOKEN
+    },
     title: 'samuelcoe.com',
     meta: [
       { charset: 'utf-8' },

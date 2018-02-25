@@ -83,7 +83,7 @@ export default {
     TwitterFeed
   },
   data: () => ({
-    token: process.env.GIT_TOKEN
+    token: process.env.gitToken
   })
 }
 </script>
