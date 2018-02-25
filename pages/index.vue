@@ -83,7 +83,7 @@ export default {
     TwitterFeed
   },
   data: () => ({
-    token: process.env.GIT_TOKEN ? process.env.GIT_TOKEN : require('../config/github').token
+    token: process.env.GIT_TOKEN
   })
 }
 </script>
