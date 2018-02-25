@@ -76,7 +76,6 @@
 <script>
 import BlogList from '~/components/BlogList.vue';
 import TwitterFeed from '~/components/TwitterFeed.vue';
-import gitConfig from '../config/github';
 
 export default {
   components: {
@@ -84,7 +83,7 @@ export default {
     TwitterFeed
   },
   data: () => ({
-    token: gitConfig.token
+    token: process.env.GIT_TOKEN ? process.env.GIT_TOKEN : require('../config/github').token
   })
 }
 </script>
