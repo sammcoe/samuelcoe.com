@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     formatDate(post) {
-      return format(new Date(post.created), 'MMMM Do[,] YYYY')
+      return format(new Date(post.attributes.created), 'MMMM Do[,] YYYY')
     },
     invertColor(hex, bw) {
       if (hex.indexOf('#') === 0) {

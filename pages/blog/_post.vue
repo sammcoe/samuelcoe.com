@@ -75,7 +75,7 @@
         return this.$store.state.posts.post;
       },
       createdAt () {
-        return format(new Date(this.post.created), 'MMMM Do[,] YYYY');
+        return format(new Date(this.post.attributes.created), 'MMMM Do[,] YYYY');
       },
       postTitle () {
         if (this.post) {

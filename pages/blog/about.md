@@ -1,6 +1,7 @@
 ---
 title: About Me
 description: I am from, and still resident to, a small town in Illinois called Marion. Growing up in a rural, small town environment instilled in me a love of peace and the country, but also a desire for bigger, more exciting things.
+created: 2018-02-23T19:46:00.000Z
 badge: SC
 color: 4DBA87
 ---

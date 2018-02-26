@@ -1,6 +1,7 @@
 ---
 title: Using Font Awesome 5 SVG Icons with Nuxt
 description: If you've used Font Awesome with any project in the past, you may be tempted to implement it the same way you're used to.  With Font Awesome 5, there's a better way to do it, and if you're using Nuxt it's a must.
+created: 2018-02-23T20:46:00.000Z
 badge: JS
 color: F7DF1E
 ---

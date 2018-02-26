@@ -24,7 +24,7 @@ export const actions = {
       if (a === b) {
         return 0
       }
-      return (a.created < b.created) ? 1 : -1
+      return (a.attributes.created < b.attributes.created) ? 1 : -1
     })
     commit('updatePosts', sorted);
   },
