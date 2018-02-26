@@ -1,3 +1,5 @@
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()
+
 module.exports = {
   /*
   ** Headers of the page
@@ -55,7 +57,6 @@ module.exports = {
     // { src: '~/plugins/fontawesome-vue', ssr: false }
   ],
   modules: [
-    '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
     [ 'nuxt-fontawesome', {
       component: 'fa',
