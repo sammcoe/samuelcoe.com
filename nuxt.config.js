@@ -3,9 +3,6 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    env: {
-      gitToken: process.env.GIT_TOKEN
-    },
     title: 'samuelcoe.com',
     meta: [
       { charset: 'utf-8' },
@@ -16,6 +13,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    gitToken: process.env.GIT_TOKEN
+  },
   /*
   ** Customize the progress bar color
   */
@@ -24,7 +24,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    analyze: true,
     /*
     ** Run ESLint on save
     */
@@ -56,6 +55,7 @@ module.exports = {
     // { src: '~/plugins/fontawesome-vue', ssr: false }
   ],
   modules: [
+    '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
     [ 'nuxt-fontawesome', {
       component: 'fa',

@@ -12,3 +12,6 @@ dist
 
 # Github token
 config/github.js
+
+# Environment
+.env
