@@ -1,7 +1,7 @@
 ---
 title: Using dotenv with Nuxt
 description: A quick and straightforward explanation of using dotenv to handle development environment variables while honoring production environments.
-created: 2018-02-26T02:44:00.000Z
+created: 2018-02-26T14:44:00.000Z
 badge: JS
 color: F7DF1E
 ---

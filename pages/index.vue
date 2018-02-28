@@ -36,8 +36,8 @@
           <article class="tile box is-child is-vertical">
             <div class="tile">
               <github-vue
-                class="is-centered"
                 :token="token"
+                class="is-centered"
                 avatar
                 hireable
                 company

@@ -15,3 +15,6 @@ config/github.js
 
 # Environment
 .env
+
+# PWA
+sw.*

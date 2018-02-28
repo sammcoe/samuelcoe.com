@@ -38,9 +38,10 @@
                 </div>
               </div>
               <div class="tile is-child comments">
+                <comments :slug="post.slug"/>
                 <vue-disqus
-                  shortname="samuelcoe"
-                  :identifier="disqusId"/>
+                  :identifier="disqusId"
+                  shortname="samuelcoe"/>
               </div>
             </div>
           </div>
@@ -56,10 +57,12 @@
 <script>
   import { format } from 'date-fns';
   import { mapMutations } from 'vuex';
+  import Comments from '~/components/Comments.vue'
   import VueDisqus from 'vue-disqus/VueDisqus.vue'
   
   export default {
     components: {
+      Comments,
       VueDisqus
     },
     fetch ({store, params}) {

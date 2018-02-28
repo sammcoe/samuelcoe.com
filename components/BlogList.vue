@@ -2,15 +2,15 @@
   <div class="tile is-ancestor">
     <div class="tile is-parent is-vertical">
       <nuxt-link
-        class="box post"
-        :to="post.url"
         v-for="post in posts"
-        :key="post.attributes.title">
+        :to="post.url"
+        :key="post.attributes.title"
+        class="box post">
         <div class="tile is-parent">
           <div class="tile is-child is-2 vcenter">
             <div
-              class="post-image"
-              :style="{ backgroundColor: '#' + post.attributes.color, color: invertColor('#' + post.attributes.color, true)}">
+              :style="{ backgroundColor: '#' + post.attributes.color, color: invertColor('#' + post.attributes.color, true)}"
+              class="post-image">
               {{ post.attributes.badge }}
             </div>
           </div>

@@ -58,12 +58,17 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/markdownit',
+    '@nuxtjs/pwa',
     [ 'nuxt-fontawesome', {
       component: 'fa',
       imports: [
         {
           set: '@fortawesome/fontawesome-free-brands',
           icons: ['faTwitter', 'faGithub']
+        },
+        {
+          set: '@fortawesome/fontawesome-free-solid',
+          icons: ['faEnvelope', 'faUser']
         }
       ]
     }]
