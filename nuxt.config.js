@@ -68,7 +68,7 @@ module.exports = {
         },
         {
           set: '@fortawesome/fontawesome-free-solid',
-          icons: ['faEnvelope', 'faUser']
+          icons: ['faEnvelope', 'faUser', 'faReply']
         }
       ]
     }]

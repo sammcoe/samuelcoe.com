@@ -5,7 +5,7 @@ export const actions = {
   nuxtServerInit () {
     if (process.server) {
       const fs = require('fs');
-      const files = fs.readdirSync('pages/blog');
+      const files = fs.readdirSync('pages/blog').filter(file => file.includes('.md'));
 
       const posts = files.map((file) => {
         let post = fm(fs.readFileSync(`pages/blog/${file}`, 'utf8'));

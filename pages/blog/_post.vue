@@ -38,10 +38,14 @@
                 </div>
               </div>
               <div class="tile is-child comments">
+                <h1 class="subtitle">Comments</h1>
                 <comments :slug="post.slug"/>
-                <vue-disqus
-                  :identifier="disqusId"
-                  shortname="samuelcoe"/>
+                <div
+                  class="comment"
+                  v-for="comment in comments"
+                  :key="comment.id">
+                  <comment :comment="comment"/>
+                </div>
               </div>
             </div>
           </div>
@@ -58,15 +62,17 @@
   import { format } from 'date-fns';
   import { mapMutations } from 'vuex';
   import Comments from '~/components/Comments.vue'
-  import VueDisqus from 'vue-disqus/VueDisqus.vue'
+  import Comment from '~/components/Comment.vue'
   
   export default {
     components: {
+      Comment,
       Comments,
       VueDisqus
     },
     fetch ({store, params}) {
       store.dispatch('posts/loadPost', params.post);
+      store.dispatch('comments/loadComments', params.post);
     },
     head () {
       return {
@@ -74,6 +80,9 @@
       }
     },
     computed: {
+      comments () {
+        return this.$store.state.comments.comments;
+      },
       post () {
         return this.$store.state.posts.post;
       },
@@ -84,9 +93,6 @@
         if (this.post) {
           return `Samuel Coe Blog :: ${this.post.attributes.title}`;
         }
-      },
-      disqusId () {
-        return `${process.env.NODE_ENV}-samuelcoe-${this.post.attributes.title.replace(/ /g, '_')}`
       }
     }
   }
@@ -96,5 +102,16 @@
 .header-logo-secondary {
   filter: invert(1) opacity(.3);
   -webkit-filter: invert(1) opacity(.3);
+}
+
+.tile.is-child.comments {
+  background-color: #F5F5F5;
+  margin: -11px !important;
+  padding: 15px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.comment {
+  margin-top: 25px;
 }
 </style>

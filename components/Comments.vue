@@ -31,12 +31,11 @@
       </p>
     </div>
     <div class="field">
-      <label class="label">Comment</label>
       <div class="control">
         <textarea
           name="fields[message]"
           class="textarea"
-          placeholder="Textarea"/>
+          placeholder="Comment"/>
       </div>
     </div>
     <div class="control">
