@@ -67,8 +67,7 @@
   export default {
     components: {
       Comment,
-      Comments,
-      VueDisqus
+      Comments
     },
     fetch ({store, params}) {
       store.dispatch('posts/loadPost', params.post);
