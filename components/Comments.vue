@@ -116,8 +116,8 @@ export default {
 .notification.notify {
   opacity: 1;
   margin: 30px 0px 30px 0px !important;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -webkit-animation: fadein 1s;
+  animation: fadein 1s;
 }
 
 /* Animations to fade the notification in and out */
