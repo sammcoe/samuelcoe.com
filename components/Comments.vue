@@ -41,7 +41,7 @@
       </div>
       <div class="control">
         <button
-          class="button is-link"
+          :class="['button', 'is-link', { 'is-loading': loading }]"
           @click="submitComment()">Submit</button>
       </div>
     </form>
@@ -73,6 +73,7 @@ export default {
     }
   },
   data: () => ({
+    loading: false,
     notify: false,
     comment: {
       name: '',
@@ -82,6 +83,7 @@ export default {
   }),
   methods: {
     submitComment() {
+      this.loading = true;
       let formData = new URLSearchParams();
       formData.append('options[slug]', this.slug);
       formData.append('fields[name]', this.comment.name);
@@ -90,8 +92,10 @@ export default {
 
       axios.post('https://api.staticman.net/v2/entry/sammcoe/samuelcoe.com/master/comments', formData).then((response) => {
         this.notify = true;
+        this.loading = false;
       }).catch((err) => {
         console.log(err);
+        this.loading = false;
       })
     }
   }
