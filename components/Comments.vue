@@ -1,20 +1,16 @@
 <template>
   <div>
-    <form
-      method="POST"
-      action="https://api.staticman.net/v2/entry/sammcoe/samuelcoe.com/master/comments">
-      <input
-        :value="slug"
-        name="options[slug]"
-        type="hidden">
-      <input
-        :value="`https://samuelcoe.com/blog/${slug}`"
-        name="options[redirect]"
-        type="hidden">
+    <div :class="['notification', 'is-primary', {'notify': notify}]">
+      <button
+        class="delete"
+        @click="notify = !notify"/>
+      Comment has been submitted for moderation!
+    </div>
+    <form @submit.prevent="'onSubmit'">
       <div class="field">
         <p class="control has-icons-left has-icons-right">
           <input
-            name="fields[name]"
+            v-model="comment.name"
             class="input"
             type="text"
             placeholder="Name">
@@ -26,7 +22,7 @@
       <div class="field">
         <p class="control has-icons-left has-icons-right">
           <input
-            name="fields[email]"
+            v-model="comment.email"
             class="input"
             type="email"
             placeholder="Email">
@@ -38,7 +34,7 @@
       <div class="field">
         <div class="control">
           <textarea
-            name="fields[message]"
+            v-model="comment.message"
             class="textarea"
             placeholder="Comment"/>
         </div>
@@ -59,6 +55,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Comment from '~/components/Comment';
 
 export default {
@@ -74,6 +71,29 @@ export default {
       type: String,
       default: ''
     }
+  },
+  data: () => ({
+    notify: false,
+    comment: {
+      name: '',
+      email: '',
+      message: ''
+    }
+  }),
+  methods: {
+    submitComment() {
+      let formData = new URLSearchParams();
+      formData.append('options[slug]', this.slug);
+      formData.append('fields[name]', this.comment.name);
+      formData.append('fields[email]', this.comment.email);
+      formData.append('fields[message]', this.comment.message);
+
+      axios.post('https://api.staticman.net/v2/entry/sammcoe/samuelcoe.com/master/comments', formData).then((response) => {
+        this.notify = true;
+      }).catch((err) => {
+        console.log(err);
+      })
+    }
   }
 }
 </script>
@@ -81,5 +101,39 @@ export default {
 <style>
 .comment {
   margin-top: 25px;
+}
+
+.notification {
+  opacity: 0;
+  margin: -30px 0px -30px 0px !important;
+  transition-duration: .5s;
+}
+
+.notification.notify {
+  opacity: 1;
+  margin: 30px 0px 30px 0px !important;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the notification in and out */
+@-webkit-keyframes fadein {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {opacity: 1;} 
+    to {opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
 </style>
