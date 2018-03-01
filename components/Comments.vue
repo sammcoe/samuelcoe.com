@@ -7,6 +7,10 @@
         :value="slug"
         name="options[slug]"
         type="hidden">
+      <input
+        :value="`https://samuelcoe.com/blog/${slug}`"
+        name="options[redirect]"
+        type="hidden">
       <div class="field">
         <p class="control has-icons-left has-icons-right">
           <input
@@ -40,7 +44,9 @@
         </div>
       </div>
       <div class="control">
-        <button class="button is-link">Submit</button>
+        <button
+          class="button is-link"
+          @click="submitComment()">Submit</button>
       </div>
     </form>
     <div
