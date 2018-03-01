@@ -39,13 +39,9 @@
               </div>
               <div class="tile is-child comments">
                 <h1 class="subtitle">Comments</h1>
-                <comments :slug="post.slug"/>
-                <div
-                  class="comment"
-                  v-for="comment in comments"
-                  :key="comment.id">
-                  <comment :comment="comment"/>
-                </div>
+                <comments
+                  :comments="post.comments"
+                  :slug="post.slug"/>
               </div>
             </div>
           </div>
@@ -62,16 +58,13 @@
   import { format } from 'date-fns';
   import { mapMutations } from 'vuex';
   import Comments from '~/components/Comments.vue'
-  import Comment from '~/components/Comment.vue'
   
   export default {
     components: {
-      Comment,
       Comments
     },
     fetch ({store, params}) {
       store.dispatch('posts/loadPost', params.post);
-      store.dispatch('comments/loadComments', params.post);
     },
     head () {
       return {
@@ -79,9 +72,6 @@
       }
     },
     computed: {
-      comments () {
-        return this.$store.state.comments.comments;
-      },
       post () {
         return this.$store.state.posts.post;
       },
@@ -108,9 +98,5 @@
   margin: -11px !important;
   padding: 15px;
   border-radius: 0px 0px 5px 5px;
-}
-
-.comment {
-  margin-top: 25px;
 }
 </style>
