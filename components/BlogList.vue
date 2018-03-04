@@ -8,7 +8,13 @@
         class="box post">
         <div class="tile is-parent">
           <div class="tile is-child is-2 vcenter">
+            <img
+              v-if="post.attributes.image"
+              class="is-centered"
+              width="90%"
+              :src="post.attributes.image">
             <div
+              v-if="!post.attributes.image"
               :style="{ backgroundColor: '#' + post.attributes.color, color: invertColor('#' + post.attributes.color, true)}"
               class="post-image">
               {{ post.attributes.badge }}
@@ -89,7 +95,7 @@ export default {
 }
 
 .post-image {
-  width: 120px;
+  width: 90%;
   height: 120px;
   border-radius: 5px;
   background-color: #4DBA87;

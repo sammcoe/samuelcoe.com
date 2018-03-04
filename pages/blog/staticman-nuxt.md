@@ -4,6 +4,7 @@ description: An important part of incorporating content delivery into your site 
 created: 2018-03-02T06:00:00.000Z
 badge: JS
 color: F7DF1E
+image: staticman.svg
 ---
 
 If you're like me, then chances are you ended up on this page because you want to implement a commenting system on your static generate website without handing over all the control and data to a third-party service.  The very idea of a static generated site mean that once your site is generated, you can basically pick it up and deploy on any hosting service.  Using a third-party service for commenting (such as Disqus) creates a rift between your site content and the discussion revolving around that content.
@@ -14,7 +15,7 @@ Turns out that he turned it into a project called [Staticman](https://staticman.
 
 From the README: "Staticman is a Node.js application that receives user-generated content and uploads it as data files to a GitHub repository. In practice, this allows you to have dynamic content (e.g. blog post comments) as part of a fully static website, as long as your site automatically deploys on every push to GitHub, as seen on GitHub Pages, Netlify and others."
 
-Now, Staticman does more than just commenting, but since I had set up my own static content delivery for blog posts (similar, but different-- I'll cover in another post), I was primarily interested in the commenting.  That being said, it appears that the primary focus of Staticman is on sites created using Jekyll.  After thumbing through the documentation, I decided I could adapt it to my needs.
+Now, Staticman does more than just commenting, but since I had set up my own static content delivery for blog posts (similar, but different-- I covered that in my last post), I was primarily interested in the commenting.  That being said, it appears that the primary focus of Staticman is on sites created using Jekyll.  After thumbing through the documentation, I decided I could adapt it to my needs with Nuxt.
 
 So, without further ado, here is how I used Staticman to create a commenting system for my Nuxt Vue.js static generated site:
 
@@ -136,49 +137,24 @@ and here's the example on the Staticman site:
 
 This likely isn't the route you want to take if you're using Vue, but it's still perfectly viable.  I took a different route.
 
-I created a new `Comments` Vue component and added this form to it:
+I created a new `Comments` Vue component and added what is essentially this form to it:
 ``` html
 <form @submit.prevent="'onSubmit'">
-      <div class="field">
-        <p class="control has-icons-left has-icons-right">
-          <input
-            v-model="comment.name"
-            class="input"
-            type="text"
-            placeholder="Name">
-          <span class="icon is-small is-left">
-            <fa :icon="['fas', 'user']"/>
-          </span>
-        </p>
-      </div>
-      <div class="field">
-        <p class="control has-icons-left has-icons-right">
-          <input
-            v-model="comment.email"
-            class="input"
-            type="email"
-            placeholder="Email">
-          <span class="icon is-small is-left">
-            <fa :icon="['fas', 'envelope']"/>
-          </span>
-        </p>
-      </div>
-      <div class="field">
-        <div class="control">
-          <textarea
-            v-model="comment.message"
-            class="textarea"
-            placeholder="Comment"/>
-        </div>
-      </div>
-      <div class="control">
-        <button
-          :class="['button', 'is-link', { 'is-loading': loading }]"
-          @click="submitComment()">Submit</button>
-      </div>
-    </form>
+  <input
+    v-model="comment.name"
+    type="text"
+    placeholder="Name">
+  <input
+    v-model="comment.email"
+    type="email"
+    placeholder="Email">
+  <textarea
+    v-model="comment.message"
+    placeholder="Comment"/>
+  <button @click="submitComment()">Submit</button>
+</form>
 ```
-Functionally, there isn't much going on here.  Most of this is style and spice-- so, things to note:
+Functionally, there isn't much going on here.  Things to note:
 
 1. `<form @submit.prevent="'onSubmit'">` - Vue gives us some nice options for hijacking events.  I want to handle the submission to Staticman, not through the form, but on my own terms in a component method.  This allows me to stop the redirection of the page and instead check the status of the request and display a notification to the user without any reload.
 
@@ -222,3 +198,146 @@ You will notice, if you used the `moderation: true` option in your config, that 
 Pretty slick, right? Sure is-- now onto the fun part: baking these comments into your static site during generation.
 
 ## Using the Comments
+If you haven't already, check out [my post on static content delivery using Nuxt](https://samuelcoe.com/blog/content-delivery-nuxt); this going to be building not only on the principles discussed, but directly onto that framework.
+
+With the way posts and comments are being stored in the repository, it's really very easy to add a little bit of extra logic to handle this.
+
+Below is the Vuex store `index.js` file from my last post with the comment logic added right in the middle.  This logic can be taken out and used independantly *for the most part*, but you will definitely want to understand what's making it tick, so once again, check out my previous post.
+
+I'm using `js-yaml` to parse the Staticman comments, but it appears that Staticman does support outputting comments in a format that `front-matter` can parse-- which is already being used to load posts.  I was happy with the yaml implmentation, so I left it for now.
+
+If you choose to use `js-yaml`, install it:
+``` shell
+npm i --save js-yaml
+```
+
+``` js
+export const actions = {
+  nuxtServerInit () {
+    if (process.server) {
+      const fs = require('fs');
+      const files = fs.readdirSync('pages/blog').filter(file => file.includes('.md'));
+
+      const posts = files.map((file) => {
+        let post = fm(fs.readFileSync(`pages/blog/${file}`, 'utf8'));
+        post.filename = file;
+        post.created = new Date(fs.statSync(`pages/blog/${file}`).ctime);
+        post.slug = slugify(file.replace(/\.md$/, ''), {lower: true});
+        post.url = `/blog/${post.slug}`;
+
+        // COMMENT LOGIC START
+        try {
+          // Since we're using the post slug to name the comment directory, we can
+          // just read every comment file for each post as we load them
+          const commentFiles = fs.readdirSync(`pages/blog/comments/${post.slug}`);
+          const comments = commentFiles.map((cFile) => {
+            // Parse the YAML for each comment file in the post's comment directory
+            let comment = yaml.safeLoad(fs.readFileSync(`pages/blog/comments/${post.slug}/${cFile}`, 'utf8'));
+            comment.filename = file;
+            return comment;
+          });
+          // Sort the comments by date
+          post.comments = comments.sort((a, b) => {
+            if (a === b) {
+              return 0
+            }
+            return (a.date < b.date) ? 1 : -1
+          });
+        } catch(e) {
+          if (e.code === 'ENOENT') {
+            // No comments
+            post.comments = [];
+          } else console.info(e);
+        }
+        // COMMENT LOGIC END
+
+        return post;
+      });
+      this.dispatch('posts/loadPosts', posts);
+    }
+  }
+}
+```
+
+If you followed along with how I implemented post handling, this doesn't require any extra setup because it builds directly into the post Vuex store.
+Each post in your application store is going to have its own sorted `comments` property, which means you can build a `Comment.vue` component to add to your `Comments` component to easily render the comment form and each of the existing comments in your post template (`_post.vue`).
+
+Here's basically what it will look like:
+
+#### Template
+``` html
+<div class="comment-box">
+  <img :src="avatar">
+  <p>
+    <strong>{{ comment.name }} </strong>
+    <small>{{ createdAt }}</small>
+    <br>
+    {{ comment.message }}
+  </p>
+</div>
+```
+
+#### Script
+``` js
+import { format } from 'date-fns'
+
+export default {
+  props: {
+    comment: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  computed: {
+    createdAt () {
+      return format(new Date(this.comment.date), 'MMMM Do[,] YYYY');
+    },
+    avatar () {
+      // This uses the hashed email address of the commentor to display their gravatar if available
+      return 'https://www.gravatar.com/avatar/' + this.comment.email + '?d=mm&s=128'
+    }
+  }
+}
+```
+
+And in your `Comments.vue` (from the earlier in the post):
+``` html
+<div
+  class="comment"
+  v-for="comment in comments"
+  :key="comment.id">
+  <comment :comment="comment"/>
+</div>
+```
+``` js
+import Comment from '~/components/Comment.vue'
+  
+export default {
+  components: {
+    Comment
+  },
+  ...
+}
+```
+
+**Finally**, in your `_post.vue`:
+``` html
+<comments
+  :comments="post.comments"
+  :slug="post.slug"/>
+```
+``` js
+import Comments from '~/components/Comments.vue'
+  
+export default {
+  components: {
+    Comments
+  },
+  ...
+}
+```
+
+
+That's that.  Now each of your posts will have their own comment section with a form for new comments.  Readers can add comments and Staticman will create a new YAML file in your site Repository and a pull request for you to moderate and approve.  Once approved, the new comment will merge into your master branch and (hopefully--depending on your hosting) trigger a rebuild of your static site.
+
+I hope this helps someone! As usual, feel free to leave a comment.

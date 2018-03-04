@@ -4,6 +4,7 @@ description: If you're using Nuxt to create a static generated site to serve up 
 created: 2018-02-25T12:00:00.000Z
 badge: JS
 color: F7DF1E
+image: Vue.js_Logo.svg
 ---
 
 If you're using Nuxt to create a static generated site to serve up dynamic content-- such as a blog-- the chances are that you're going to be looking for an engine to handle markdown documents.
