@@ -4,6 +4,7 @@ description: A quick and straightforward explanation of using dotenv to handle d
 created: 2018-02-26T14:44:00.000Z
 badge: JS
 color: F7DF1E
+image: Vue.js_Logo.svg
 ---
 
 A quick search of the Googles for using `dotenv` with Nuxt will almost certainly lead you to the Nuxt community module called `nuxt-community`.

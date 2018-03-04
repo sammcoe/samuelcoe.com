@@ -10,11 +10,10 @@ export const mutations = {
     })
   },
   updatePosts(state, posts) {
-    state.posts = posts.filter(post => post.filename !== '_post.vue');
+    state.posts = posts;
   },
   updatePost(state, post) {
     state.post = post;
-    console.log(state.post);
   }
 }
 

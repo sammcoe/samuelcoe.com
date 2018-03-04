@@ -4,6 +4,7 @@ description: If you've used Font Awesome with any project in the past, you may b
 created: 2018-02-23T20:46:00.000Z
 badge: JS
 color: F7DF1E
+image: fa-icon.svg
 ---
 
 If you've used Font Awesome with any project in the past, you may be tempted to implement it the same way you're used to.  Whether that's using Web Fonts with CSS or (for other Vue projects) using the Vue component that's featured on the Font Awesome website.
