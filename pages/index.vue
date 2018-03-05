@@ -6,7 +6,7 @@
           <div class="column is-half vcenter">
             <img
               class="invert"
-              src="~/static/samuel_coe_logo.svg"
+              src="~/assets/samuel_coe_logo.svg"
               alt="Samuel Coe"
               width="100%">
           </div>
@@ -51,19 +51,19 @@
                 <img
                   class="is-centered"
                   width="100px"
-                  src="~/static/JavaScript_logo.svg">
+                  src="JavaScript_logo.svg">
               </div>
               <div class="tile">
                 <img
                   class="is-centered"
                   width="100px"
-                  src="~/static/Node.js_logo.svg">
+                  src="Node.js_logo.svg">
               </div>
               <div class="tile">
                 <img 
                   class="is-centered"
                   width="100px"
-                  src="~/static/Vue.js_Logo.svg">
+                  src="Vue.js_Logo.svg">
               </div>
             </div>
           </article>

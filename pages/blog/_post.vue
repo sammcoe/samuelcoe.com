@@ -9,7 +9,7 @@
             <img
               style="height: 50px;"
               class="header-logo-secondary"
-              src="~/static/samuel_coe_logo.svg"
+              src="~/assets/samuel_coe_logo.svg"
               alt="Samuel Coe">
           </p>
           <p class="level-item title is-1 has-text-centered has-text-weight-light">
@@ -24,13 +24,24 @@
           <div class="tile">
             <div class="tile is-parent is-3"/>
             <div class="tile is-parent is-vertical box is-6">
-              <div class="tile is-child vcenter">
-                <section class="hero is-primary">
-                  <div class="hero-body">
-                    <h1 class="title has-text-weight-light">{{ post.attributes.title }}</h1>
-                    <p class="has-text-weight-light">{{ createdAt }}</p>
+              <div class="tile is-parent">
+                <div
+                  class="tile is-child is-3"
+                  v-if="post.attributes.image">
+                  <div class="is-centered vcenter">
+                    <img
+                      width="90%"
+                      :src="postImage">
                   </div>
-                </section>
+                </div>
+                <div class="tile is-child">
+                  <section class="hero is-primary">
+                    <div class="hero-body">
+                      <h1 class="title has-text-weight-light">{{ post.attributes.title }}</h1>
+                      <p class="has-text-weight-light">{{ createdAt }}</p>
+                    </div>
+                  </section>
+                </div>
               </div>
               <div class="tile is-child">
                 <div class="content">
@@ -110,6 +121,9 @@
         if (this.post) {
           return `Samuel Coe Blog :: ${this.post.attributes.title}`;
         }
+      },
+      postImage () {
+        return `/${this.post.attributes.image}`;
       }
     }
   }
@@ -126,5 +140,11 @@
   margin: -11px !important;
   padding: 15px;
   border-radius: 0px 0px 5px 5px;
+}
+
+.vcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>
