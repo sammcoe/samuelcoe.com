@@ -9,7 +9,7 @@
             <img
               style="height: 50px;"
               class="header-logo-secondary"
-              src="~/static/samuel_coe_logo.svg"
+              src="~/assets/samuel_coe_logo.svg"
               alt="Samuel Coe">
           </p>
           <p class="level-item title is-1 has-text-centered has-text-weight-light">
@@ -24,18 +24,46 @@
           <div class="tile">
             <div class="tile is-parent is-3"/>
             <div class="tile is-parent is-vertical box is-6">
-              <div class="tile is-child vcenter">
-                <section class="hero is-primary">
-                  <div class="hero-body">
-                    <h1 class="title has-text-weight-light">{{ post.attributes.title }}</h1>
-                    <p class="has-text-weight-light">{{ createdAt }}</p>
+              <div class="tile is-parent">
+                <div
+                  class="tile is-child is-3"
+                  v-if="post.attributes.image">
+                  <div class="is-centered vcenter">
+                    <img
+                      width="90%"
+                      :src="postImage">
                   </div>
-                </section>
+                </div>
+                <div class="tile is-child">
+                  <section class="hero is-primary">
+                    <div class="hero-body">
+                      <h1 class="title has-text-weight-light">{{ post.attributes.title }}</h1>
+                      <p class="has-text-weight-light">{{ createdAt }}</p>
+                    </div>
+                  </section>
+                </div>
               </div>
               <div class="tile is-child">
                 <div class="content">
                   <div v-html="$md.render(post.body)"/>
                 </div>
+              </div>
+              <div class="tile is-child">
+                <vue-goodshare-twitter 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
+                <vue-goodshare-facebook 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
+                <vue-goodshare-google-plus 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
+                <vue-goodshare-reddit 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
+                <vue-goodshare-linked-in 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
               </div>
               <div class="tile is-child comments">
                 <h1 class="subtitle">Comments</h1>
@@ -58,10 +86,21 @@
   import { format } from 'date-fns';
   import { mapMutations } from 'vuex';
   import Comments from '~/components/Comments.vue'
+  import VueGoodshareFacebook from '~/components/Facebook.vue'
+  import VueGoodshareTwitter from '~/components/Twitter.vue'
+  import VueGoodshareReddit from '~/components/Reddit.vue'
+  import VueGoodshareGooglePlus from '~/components/GooglePlus.vue'
+  import VueGoodshareLinkedIn from '~/components/LinkedIn.vue'
   
   export default {
     components: {
-      Comments
+      Comments,
+      VueGoodshareFacebook,
+      VueGoodshareTwitter,
+      VueGoodshareReddit,
+      VueGoodshareGooglePlus,
+      VueGoodshareLinkedIn
+
     },
     fetch ({store, params}) {
       store.dispatch('posts/loadPost', params.post);
@@ -82,6 +121,9 @@
         if (this.post) {
           return `Samuel Coe Blog :: ${this.post.attributes.title}`;
         }
+      },
+      postImage () {
+        return `/${this.post.attributes.image}`;
       }
     }
   }
@@ -98,5 +140,11 @@
   margin: -11px !important;
   padding: 15px;
   border-radius: 0px 0px 5px 5px;
+}
+
+.vcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>
