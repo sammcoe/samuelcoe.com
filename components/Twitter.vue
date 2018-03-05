@@ -71,7 +71,7 @@
         let left = (screen.width / 2) - (width / 2)
         let top = (screen.height / 2) - (height / 2)
         const window_config = 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top + ','
-        const share_url = 'https://twitter.com/share?'
+        const share_url = 'https://twitter.com/intent/tweet?'
           + 'url=' + encodeURIComponent(this.$props.page_url)
           + '&text=' + encodeURIComponent(this.$props.page_title)
         

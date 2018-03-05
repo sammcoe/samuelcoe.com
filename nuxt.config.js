@@ -57,6 +57,9 @@ module.exports = {
     // { src: '~/plugins/fontawesome-vue', ssr: false }
   ],
   modules: [
+    [ '@nuxtjs/google-analytics', {
+      id: 'UA-115082949-1'
+    }],
     '@nuxtjs/markdownit',
     '@nuxtjs/pwa',
     [ 'nuxt-fontawesome', {
