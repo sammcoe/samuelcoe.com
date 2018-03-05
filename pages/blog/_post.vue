@@ -37,6 +37,23 @@
                   <div v-html="$md.render(post.body)"/>
                 </div>
               </div>
+              <div class="tile is-child">
+                <vue-goodshare-twitter 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
+                <vue-goodshare-facebook 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
+                <vue-goodshare-google-plus 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
+                <vue-goodshare-reddit 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
+                <vue-goodshare-linked-in 
+                  :page_url="`https://samuelcoe.com${post.url}`" 
+                  :page_title="postTitle"/>
+              </div>
               <div class="tile is-child comments">
                 <h1 class="subtitle">Comments</h1>
                 <comments
@@ -58,10 +75,21 @@
   import { format } from 'date-fns';
   import { mapMutations } from 'vuex';
   import Comments from '~/components/Comments.vue'
+  import VueGoodshareFacebook from '~/components/Facebook.vue'
+  import VueGoodshareTwitter from '~/components/Twitter.vue'
+  import VueGoodshareReddit from '~/components/Reddit.vue'
+  import VueGoodshareGooglePlus from '~/components/GooglePlus.vue'
+  import VueGoodshareLinkedIn from '~/components/LinkedIn.vue'
   
   export default {
     components: {
-      Comments
+      Comments,
+      VueGoodshareFacebook,
+      VueGoodshareTwitter,
+      VueGoodshareReddit,
+      VueGoodshareGooglePlus,
+      VueGoodshareLinkedIn
+
     },
     fetch ({store, params}) {
       store.dispatch('posts/loadPost', params.post);
