@@ -34,15 +34,12 @@
                       :src="postImage">
                   </div>
                 </div>
-                <div class="tile is-child">
-                  <section class="hero is-primary">
-                    <div class="hero-body">
-                      <h1 class="title has-text-weight-light">{{ post.attributes.title }}</h1>
-                      <p class="has-text-weight-light">{{ createdAt }}</p>
-                    </div>
-                  </section>
+                <div class="tile is-child vcenter">
+                  <h1 class="title has-text-weight-light has-text-primary is-2">{{ post.attributes.title }}</h1>
+                  <p class="has-text-weight-light">{{ createdAt }}</p>
                 </div>
               </div>
+              <div class="is-divider"/>
               <div class="tile is-child">
                 <div class="content">
                   <div v-html="$md.render(post.body)"/>
@@ -93,6 +90,8 @@
   import VueGoodshareLinkedIn from '~/components/LinkedIn.vue'
   
   export default {
+    layout: 'blog',
+    scrollToTop: true,
     components: {
       Comments,
       VueGoodshareFacebook,
