@@ -20,7 +20,7 @@
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-3">
           <h1 class="title has-text-primary">books</h1>
-          <div class="tile is-parent">
+          <div class="tile is-parent is-vertical">
             <media-card
               v-for="book in books"
               :key="book.filename"
@@ -33,7 +33,7 @@
         <div class="tile is-1"/>
         <div class="tile is-vertical is-4">
           <h1 class="title has-text-primary">podcasts</h1>
-          <div class="tile is-parent">
+          <div class="tile is-parent is-vertical">
             <media-card
               v-for="podcast in podcasts"
               :key="podcast.filename"
@@ -46,7 +46,7 @@
         <div class="tile is-1"/>
         <div class="tile is-vertical is-3">
           <h1 class="title has-text-primary">blogs</h1>
-          <div class="tile is-parent">
+          <div class="tile is-parent is-vertical">
             <media-card
               v-for="blog in blogs"
               :key="blog.filename"

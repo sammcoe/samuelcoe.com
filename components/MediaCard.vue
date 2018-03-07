@@ -5,6 +5,7 @@
     <div class="tile is-vertical">
       <div class="is-child media">
         <img
+          class="is-centered"
           :src="image"
           alt="Media Image">
       </div>
@@ -42,5 +43,10 @@ export default {
 <style>
 .media {
   margin-bottom: 20px;
+}
+
+.is-centered {
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

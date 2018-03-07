@@ -1,0 +1,6 @@
+type: book
+title: Eloquent JavaScript
+text: This is a book about JavaScript, programming, and the wonders of the digital.  Eloquent JavaScript is a highly effective, easy to follow book that covers all the bases.
+image: http://eloquentjavascript.net/img/cover.jpg
+link: http://eloquentjavascript.net/
+rank: 99
