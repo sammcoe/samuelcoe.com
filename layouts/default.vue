@@ -90,6 +90,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: whitesmoke;
 }
 
 *, *:before, *:after {
@@ -124,5 +125,9 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.footer {
+  background-color: white !important;
 }
 </style>

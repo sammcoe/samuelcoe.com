@@ -135,7 +135,7 @@
 }
 
 .tile.is-child.comments {
-  background-color: #F5F5F5;
+  background-color: #f7f9ff;
   margin: -11px !important;
   padding: 15px;
   border-radius: 0px 0px 5px 5px;

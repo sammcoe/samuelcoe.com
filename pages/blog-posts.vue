@@ -21,7 +21,7 @@
         <div class="tile is-vertical is-12">
           <div class="tile">
             <div class="tile is-parent is-3"/>
-            <div class="tile is-parent is-vertical box is-6">
+            <div class="tile is-parent is-vertical is-6">
               <blog-list/>
             </div>
           </div>
