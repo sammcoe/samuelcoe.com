@@ -1,0 +1,11 @@
+_id: da7f39f0-d967-11e8-aeb2-a14cbc5b8eb2
+name: Chris Bemister
+email: c8de6db083193dd97277c6e2be6f7e01
+message: >-
+  Great article!  I'm working on a project somewhat related to this.  I'm using
+  nuxt to generate a static website that is hosted on netlify.  My website
+  content is stored on firebase.  I can add or edit content directly through a
+  admin page on the site that is restricted by a login.  After content is either
+  added or updated, I use a cloud function to trigger a rebuild of the website
+  using a netlify webhook.
+date: '2018-10-26T21:41:10.855Z'
