@@ -46,9 +46,9 @@
       </div>
     </form>
     <div
-      class="comment"
       v-for="comment in comments"
-      :key="comment.id">
+      :key="comment.id"
+      class="comment">
       <comment :comment="comment"/>
     </div>
   </div>

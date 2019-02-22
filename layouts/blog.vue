@@ -38,8 +38,8 @@
           </nuxt-link>
         </div>
         <div
-          class="navbar-item has-text-primary has-text-weight-semibold"
-          v-if="$store.state.posts.post.attributes">
+          v-if="$store.state.posts.post.attributes"
+          class="navbar-item has-text-primary has-text-weight-semibold">
           {{ $store.state.posts.post.attributes.title }}
         </div>
         <div class="navbar-end">

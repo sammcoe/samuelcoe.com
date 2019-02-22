@@ -1,24 +1,20 @@
 <template>
   <div class="has-navbar-fixed-top">
-    <section class="hero is-bold is-primary">
-      <div class="hero-body main-banner">
-        <div class="columns">
-          <div class="column is-half vcenter">
-            <img
-              class="invert"
-              src="~/assets/samuel_coe_logo.svg"
-              alt="Samuel Coe"
-              width="100%">
-          </div>
-          <div class="column"/>
-        </div>
-      </div>
-    </section>
     <section class="section">
       <div class="tile is-ancestor">
-        <div class="tile is-vertical is-9">
+        <div class="tile is-vertical is-12">
           <div class="tile">
-            <div class="tile is-parent is-4">
+            <div class="tile is-parent is-vertical is-4">
+              <div class="tile is-child">
+                <github-vue
+                  :token="token"
+                  class="is-centered"
+                  avatar
+                  company
+                  email
+                  vertical
+                  bio/>
+              </div>
               <article class="tile is-child box">
                 <no-ssr>
                   <twitter-feed/>
@@ -31,42 +27,6 @@
               </div>              
             </div>
           </div>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile box is-child is-vertical">
-            <div class="tile">
-              <github-vue
-                :token="token"
-                class="is-centered"
-                avatar
-                hireable
-                company
-                email
-                bio
-                vertical
-                no-border/>
-            </div>
-            <div class="tile">
-              <div class="tile">
-                <img
-                  class="is-centered"
-                  width="100px"
-                  src="JavaScript_logo.svg">
-              </div>
-              <div class="tile">
-                <img
-                  class="is-centered"
-                  width="100px"
-                  src="Node.js_logo.svg">
-              </div>
-              <div class="tile">
-                <img 
-                  class="is-centered"
-                  width="100px"
-                  src="Vue.js_Logo.svg">
-              </div>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -89,6 +49,12 @@ export default {
 </script>
 
 <style>
+@media screen and (max-width: 450px) {
+  .section {
+    padding: 3rem .5rem;
+  }
+}
+
 .vcenter {
   display: flex;
   flex-direction: column;

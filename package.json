@@ -19,16 +19,11 @@
       "babel-register"
     ]
   },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
   "dependencies": {
     "@fortawesome/fontawesome-free-brands": "^5.0.6",
     "@fortawesome/fontawesome-free-solid": "^5.0.6",
     "@nuxtjs/google-analytics": "^2.0.2",
-    "@nuxtjs/markdownit": "^1.2.0",
+    "@nuxtjs/markdownit": "^1.2.3",
     "@nuxtjs/pwa": "^2.0.5",
     "axios": "^0.17.1",
     "bulma": "^0.6.2",
@@ -39,21 +34,21 @@
     "highlight.js": "^9.12.0",
     "js-yaml": "^3.10.0",
     "markdown-it-highlightjs": "^3.0.0",
-    "node-sass": "^4.7.2",
-    "npm": "^5.7.1",
-    "nuxt": "^1.0.0",
+    "node-sass": "^4.11.0",
+    "npm": "^6.8.0",
+    "nuxt": "^2.4.3",
     "nuxt-fontawesome": "^0.1.3",
     "sass-loader": "^6.0.6",
     "slugify": "^1.2.9"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "babel-eslint": "^8.2.1",
+    "ava": "^1.2.1",
+    "babel-eslint": "^10.0.1",
     "dotenv": "^5.0.0",
     "eslint": "^4.17.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
+    "eslint-loader": "^2.1.2",
     "eslint-plugin-html": "^4.0.2",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^6.0.0",

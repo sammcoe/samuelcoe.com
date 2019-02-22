@@ -5,8 +5,8 @@
     <div class="tile is-vertical">
       <div class="is-child media">
         <img
-          class="is-centered"
           :src="image"
+          class="is-centered"
           alt="Media Image">
       </div>
       <div class="is-child">

@@ -42,10 +42,7 @@ module.exports = {
       }
       config.resolve.alias['@fortawesome/fontawesome-free-brands$'] = '@fortawesome/fontawesome-free-brands/shakable.es.js'
       config.resolve.alias['@fortawesome/fontawesome-free-solid$'] = '@fortawesome/fontawesome-free-solid/shakable.es.js'
-    },
-    vendor: [
-      'github-vue'
-    ]
+    }
   },
   layoutTransition: {
     name: 'layout',

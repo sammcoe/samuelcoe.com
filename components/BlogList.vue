@@ -10,9 +10,9 @@
           <div class="tile is-child is-2 vcenter">
             <img
               v-if="post.attributes.image"
+              :src="post.attributes.image"
               class="is-centered"
-              width="90%"
-              :src="post.attributes.image">
+              width="90%">
             <div
               v-if="!post.attributes.image"
               :style="{ backgroundColor: '#' + post.attributes.color, color: invertColor('#' + post.attributes.color, true)}"

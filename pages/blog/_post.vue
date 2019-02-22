@@ -26,12 +26,12 @@
             <div class="tile is-parent is-vertical box is-6">
               <div class="tile is-parent">
                 <div
-                  class="tile is-child is-3"
-                  v-if="post.attributes.image">
+                  v-if="post.attributes.image"
+                  class="tile is-child is-3">
                   <div class="is-centered vcenter">
                     <img
-                      width="90%"
-                      :src="postImage">
+                      :src="postImage"
+                      width="90%">
                   </div>
                 </div>
                 <div class="tile is-child vcenter">

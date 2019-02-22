@@ -1,6 +1,5 @@
 <template>
   <a
-    class="button-social"
     :class="buttonSocialDesignObject"
     :page-url="page_url"
     :page-title="page_title"
@@ -10,17 +9,18 @@
     :has-icon="has_icon"
     :has-square-edges="has_square_edges"
     :has-counter="has_counter"
+    class="button-social"
     @click.prevent="showShareWindow">
     <fa
+      v-if="this.$props.has_icon"
       :icon="['fab', 'linkedin']"
-      size="2x"
-      v-if="this.$props.has_icon"/>
+      size="2x"/>
     <span 
-      class="title-social"
-      v-if="this.$props.title_social">{{ title_social }}</span>
+      v-if="this.$props.title_social"
+      class="title-social">{{ title_social }}</span>
     <span
-      class="counter-linkedin"
       v-if="this.$props.has_counter"
+      class="counter-linkedin"
     >{{ counter_linkedin }}</span>
   </a>
 </template>
