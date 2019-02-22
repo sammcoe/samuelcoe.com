@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="level">
           <p class="level-item"/>
-          <p class="level-item title is-1 has-text-centered has-text-weight-light">
+          <p class="level-item title is-2 has-text-centered has-text-weight-light">
             recommendations
           </p>
         </div>
@@ -105,5 +105,9 @@ export default {
 .header-logo-secondary {
   filter: invert(1) opacity(0.3);
   -webkit-filter: invert(1) opacity(0.3);
+}
+
+.title.has-text-primary {
+  margin-left: .75rem;
 }
 </style>

@@ -11,15 +11,22 @@
           <img
             src="~/assets/SC_logo.svg"
             alt="Samuel Coe"
-            height="28">
+            height="28"
+            @click="handleMenuState()">
         </nuxt-link>
-        <button class="button navbar-burger">
+        <button
+          :class="['button', 'navbar-burger', { 'is-active': isActive }]"
+          @click="handleMenuState(true)"  
+        >
           <span/>
           <span/>
           <span/>
         </button>
       </div>
-      <div class="navbar-menu">
+      <div
+        :class="['navbar-menu', { 'is-active': isActive }]"
+        @click="handleMenuState()"
+      >
         <div class="navbar-start">
           <nuxt-link
             class="navbar-item"
@@ -79,6 +86,26 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isActive: false
+    };
+  },
+
+  methods: {
+    handleMenuState(toggle) {
+      if (toggle) {
+        this.isActive = !this.isActive;
+      } else if (this.isActive) {
+        this.isActive = false;
+      }
+    }
+  }
+}
+</script>
 
 <style>
 html {
