@@ -51,7 +51,7 @@
                 <a
                   class="button is-info"
                   data-social-network="Twitter"
-                  href="https://twitter.com/SamuelMcoe">
+                  href="https://twitter.com/thesamcoe">
                   <span class="icon">
                     <fa :icon="['fab', 'twitter']"/>
                   </span>
