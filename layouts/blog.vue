@@ -36,6 +36,11 @@
             to="/blog-posts">
             blog
           </nuxt-link>
+          <nuxt-link
+            class="navbar-item"
+            to="/creations">
+            creations
+          </nuxt-link>
         </div>
         <div
           v-if="$store.state.posts.post.attributes"

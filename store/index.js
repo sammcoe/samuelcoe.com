@@ -1,22 +1,22 @@
-import fm from 'front-matter';
-import slugify from 'slugify';
-import yaml from 'js-yaml';
+import fm from "front-matter";
+import slugify from "slugify";
+import yaml from "js-yaml";
 
 export const actions = {
   nuxtServerInit() {
     if (process.server) {
-      const fs = require('fs');
+      const fs = require("fs");
 
       // Posts
       const files = fs
-        .readdirSync('pages/blog')
-        .filter(file => file.includes('.md'));
+        .readdirSync("pages/blog")
+        .filter(file => file.includes(".md"));
 
       const posts = files.map(file => {
-        let post = fm(fs.readFileSync(`pages/blog/${file}`, 'utf8'));
+        let post = fm(fs.readFileSync(`pages/blog/${file}`, "utf8"));
         post.filename = file;
         post.created = new Date(fs.statSync(`pages/blog/${file}`).ctime);
-        post.slug = slugify(file.replace(/\.md$/, ''), { lower: true });
+        post.slug = slugify(file.replace(/\.md$/, ""), { lower: true });
         post.url = `/blog/${post.slug}`;
 
         try {
@@ -27,7 +27,7 @@ export const actions = {
             let comment = yaml.safeLoad(
               fs.readFileSync(
                 `pages/blog/comments/${post.slug}/${cFile}`,
-                'utf8'
+                "utf8"
               )
             );
             comment.filename = cFile;
@@ -40,7 +40,7 @@ export const actions = {
             return a.date < b.date ? 1 : -1;
           });
         } catch (e) {
-          if (e.code === 'ENOENT') {
+          if (e.code === "ENOENT") {
             // No comments
             post.comments = [];
           } else console.info(e);
@@ -48,19 +48,34 @@ export const actions = {
 
         return post;
       });
-      this.dispatch('posts/loadPosts', posts);
+      this.dispatch("posts/loadPosts", posts);
 
       // Recommendations
-      const recFiles = fs.readdirSync('pages/blog/recommendations');
+      const recFiles = fs.readdirSync("pages/blog/recommendations");
       try {
         const recommendations = recFiles.map(rFile => {
           let recommendation = yaml.safeLoad(
-            fs.readFileSync(`pages/blog/recommendations/${rFile}`, 'utf8')
+            fs.readFileSync(`pages/blog/recommendations/${rFile}`, "utf8")
           );
           recommendation.filename = rFile;
           return recommendation;
         });
-        this.dispatch('recs/loadRecommendations', recommendations);
+        this.dispatch("recs/loadRecommendations", recommendations);
+      } catch (e) {
+        console.info(e);
+      }
+
+      // Creations
+      const creationFiles = fs.readdirSync("pages/blog/creations");
+      try {
+        const creations = creationFiles.map(rFile => {
+          let creation = yaml.safeLoad(
+            fs.readFileSync(`pages/blog/creations/${rFile}`, "utf8")
+          );
+          creation.filename = rFile;
+          return creation;
+        });
+        this.dispatch("creations/loadCreations", creations);
       } catch (e) {
         console.info(e);
       }
