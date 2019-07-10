@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     apps() {
-      return this.$store.state.creations.apps.filter(
+      return this.$store.state.creations.creations.filter(
         creation => creation.type === "app"
       );
     }
