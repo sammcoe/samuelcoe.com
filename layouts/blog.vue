@@ -36,6 +36,11 @@
             to="/blog-posts">
             blog
           </nuxt-link>
+          <nuxt-link
+            class="navbar-item"
+            to="/creations">
+            creations
+          </nuxt-link>
         </div>
         <div
           v-if="$store.state.posts.post.attributes"
@@ -49,7 +54,7 @@
                 <a
                   class="button is-info"
                   data-social-network="Twitter"
-                  href="https://twitter.com/SamuelMcoe">
+                  href="https://twitter.com/thesamcoe">
                   <span class="icon">
                     <fa :icon="['fab', 'twitter']"/>
                   </span>

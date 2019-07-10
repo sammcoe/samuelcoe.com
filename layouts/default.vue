@@ -1,48 +1,25 @@
 <template>
   <div>
-    <nav
-      class="navbar is-fixed-top"
-      role="navigation"
-      aria-label="main navigation">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <nuxt-link
-          class="navbar-item"
-          to="/">
-          <img
-            src="~/assets/SC_logo.svg"
-            alt="Samuel Coe"
-            height="28"
-            @click="handleMenuState()">
+        <nuxt-link class="navbar-item" to="/">
+          <img src="~/assets/SC_logo.svg" alt="Samuel Coe" height="28" @click="handleMenuState()" />
         </nuxt-link>
         <button
           :class="['button', 'navbar-burger', { 'is-active': isActive }]"
-          @click="handleMenuState(true)"  
+          @click="handleMenuState(true)"
         >
-          <span/>
-          <span/>
-          <span/>
+          <span />
+          <span />
+          <span />
         </button>
       </div>
-      <div
-        :class="['navbar-menu', { 'is-active': isActive }]"
-        @click="handleMenuState()"
-      >
+      <div :class="['navbar-menu', { 'is-active': isActive }]" @click="handleMenuState()">
         <div class="navbar-start">
-          <nuxt-link
-            class="navbar-item"
-            to="/about">
-            about
-          </nuxt-link>
-          <nuxt-link
-            class="navbar-item"
-            to="/recommendations">
-            recommendations
-          </nuxt-link>
-          <nuxt-link
-            class="navbar-item"
-            to="/blog-posts">
-            blog
-          </nuxt-link>
+          <nuxt-link class="navbar-item" to="/about">about</nuxt-link>
+          <nuxt-link class="navbar-item" to="/recommendations">recommendations</nuxt-link>
+          <nuxt-link class="navbar-item" to="/blog-posts">blog</nuxt-link>
+          <nuxt-link class="navbar-item" to="/creations">creations</nuxt-link>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
@@ -51,20 +28,18 @@
                 <a
                   class="button is-info"
                   data-social-network="Twitter"
-                  href="https://twitter.com/SamuelMcoe">
+                  href="https://twitter.com/thesamcoe"
+                >
                   <span class="icon">
-                    <fa :icon="['fab', 'twitter']"/>
+                    <fa :icon="['fab', 'twitter']" />
                   </span>
                   <span>Twitter</span>
                 </a>
               </p>
               <p class="control">
-                <a
-                  class="button"
-                  data-social-network="Github"
-                  href="https://github.com/sammcoe">
+                <a class="button" data-social-network="Github" href="https://github.com/sammcoe">
                   <span class="icon">
-                    <fa :icon="['fab', 'github']"/>
+                    <fa :icon="['fab', 'github']" />
                   </span>
                   <span>GitHub</span>
                 </a>
@@ -74,13 +49,11 @@
         </div>
       </div>
     </nav>
-    <nuxt/>
+    <nuxt />
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
-          <p>
-            Copyright © {{ (new Date).getFullYear() }} Samuel Coe
-          </p>
+          <p>Copyright © {{ (new Date).getFullYear() }} Samuel Coe</p>
         </div>
       </div>
     </footer>
@@ -104,12 +77,13 @@ export default {
       }
     }
   }
-}
+};
 </script>
 
 <style>
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -120,7 +94,9 @@ html {
   background-color: whitesmoke;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
 }

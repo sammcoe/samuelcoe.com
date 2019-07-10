@@ -7,7 +7,7 @@
       data-tweet-limit="5"
       data-height="200"
       data-chrome="noheader nofooter noborders"
-      href="https://twitter.com/SamuelMcoe?ref_src=twsrc%5Etfw"/>
+      href="https://twitter.com/thesamcoe?ref_src=twsrc%5Etfw"/>
     <script
       async
       src="https://platform.twitter.com/widgets.js"
