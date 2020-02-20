@@ -1,8 +1,0 @@
-_id: 52d11cf0-2794-11e9-a182-47c863e1b925
-name: Daniel S.
-email: b035d339ea2a49768a22b9123ed39d76
-message: >-
-  Nice man, was looking for this! Treeshaking helped me get from 331kb to 164kb,
-  pretty huge. Made no sense to load all icons on generate. How did you find
-  this? Looked everywhere...
-date: '2019-02-03T09:16:01.876Z'

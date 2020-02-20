@@ -1,9 +1,0 @@
-_id: c96471f0-a157-11e8-b0d9-d9b0d28ed0af
-name: Samuel Coe
-email: 973516376c275aba0f7e84ac95e60d0a
-message: >-
-  This is specifically for highlighting in markdown.  Are you referring to the
-  highlighting of HTML syntax in your markdown code blocks?  If so, you might
-  want to have a look at the Highlight.js documentation here:
-  https://highlightjs.readthedocs.io/en/latest/
-date: '2018-08-16T13:25:05.251Z'

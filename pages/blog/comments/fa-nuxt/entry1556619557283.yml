@@ -1,8 +1,0 @@
-_id: 68db8fe0-6b31-11e9-b841-fb6695c7f382
-name: SH
-email: db136db3e0bc8606d6409639f8fc1801
-message: >-
-  Thank you for this! `fontawesome` was making my asset size huge. I wonder if
-  there's a way to dynamically derive which icons to import based on usage,
-  instead of having to add each icon separately in the config file.
-date: '2019-04-30T10:19:17.283Z'
