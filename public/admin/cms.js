@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "feadc5da9ba513215e54";
+/******/ 	var hotCurrentHash = "70408ffd57f7fbcdfe61";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -87927,16 +87927,16 @@ function (_React$Component) {
       function () {
         // set the class in state for the navbar accordingly
         _this.state.active ? _this.setState({
-          navBarActiveClass: 'is-active'
+          navBarActiveClass: "is-active"
         }) : _this.setState({
-          navBarActiveClass: ''
+          navBarActiveClass: ""
         });
       });
     };
 
     _this.state = {
       active: false,
-      navBarActiveClass: ''
+      navBarActiveClass: ""
     };
     return _this;
   }
@@ -87947,7 +87947,7 @@ function (_React$Component) {
     var _this2 = this;
 
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-      className: "navbar is-transparent",
+      className: "navbar",
       role: "navigation",
       "aria-label": "main-navigation",
       __source: {
@@ -87959,37 +87959,17 @@ function (_React$Component) {
       className: "container",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 38
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "navbar-brand",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 39
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      to: "/",
-      className: "navbar-item",
-      title: "Logo",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-      src: _img_logo_svg__WEBPACK_IMPORTED_MODULE_4___default.a,
-      alt: "Kaldi",
-      style: {
-        width: '88px'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 45
-      },
-      __self: this
-    })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "navbar-burger burger " + this.state.navBarActiveClass,
       "data-target": "navMenu",
       onClick: function onClick() {
@@ -87997,25 +87977,25 @@ function (_React$Component) {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 41
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 46
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 47
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 48
       },
       __self: this
     }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -88023,78 +88003,70 @@ function (_React$Component) {
       className: "navbar-menu " + this.state.navBarActiveClass,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 51
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "navbar-start has-text-centered",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 55
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       className: "navbar-item",
-      to: "/about",
+      to: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 56
       },
       __self: this
-    }, "About"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      className: "navbar-item",
-      to: "/products",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 66
-      },
-      __self: this
-    }, "Products"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    }, "Home"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       className: "navbar-item",
       to: "/blog",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }, "Blog"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      className: "navbar-item",
+      to: "/work",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    }, "Work"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      className: "navbar-item",
+      to: "/contact",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    }, "Contact")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "navbar-end has-text-centered",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 69
       },
       __self: this
-    }, "Blog"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      className: "navbar-item",
-      to: "/contact",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
-    }, "Contact"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      className: "navbar-item",
-      to: "/contact/examples",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 75
-      },
-      __self: this
-    }, "Form Examples")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: "navbar-end has-text-centered",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 79
-      },
-      __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-      className: "navbar-item",
+      className: "navbar-item navbar-icon",
       href: "https://github.com/netlify-templates/gatsby-starter-netlify-cms",
       target: "_blank",
       rel: "noopener noreferrer",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 70
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       className: "icon",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 76
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -88102,7 +88074,7 @@ function (_React$Component) {
       alt: "Github",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 77
       },
       __self: this
     })))))));
@@ -88546,7 +88518,7 @@ var _default = Testimonials;
 
 // extracted by mini-css-extract-plugin
     if(true) {
-      // 1582232813658
+      // 1582588681398
       var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.i, {"hmr":true,"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -89027,196 +88999,139 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 var IndexPageTemplate = function IndexPageTemplate(_ref) {
-  var image = _ref.image,
-      title = _ref.title,
-      heading = _ref.heading,
-      subheading = _ref.subheading,
+  var heading = _ref.heading,
       mainpitch = _ref.mainpitch,
       description = _ref.description,
       intro = _ref.intro;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 15
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "full-width-image margin-top-0",
-    style: {
-      backgroundImage: "url(" + (!!image.childImageSharp ? image.childImageSharp.fluid.src : image) + ")",
-      backgroundPosition: "top left",
-      backgroundAttachment: "fixed"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: {
-      display: 'flex',
-      height: '150px',
-      lineHeight: '1',
-      justifyContent: 'space-around',
-      alignItems: 'left',
-      flexDirection: 'column'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen",
-    style: {
-      boxShadow: 'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-      backgroundColor: 'rgb(255, 68, 0)',
-      color: 'white',
-      lineHeight: '1',
-      padding: '0.25em'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen",
-    style: {
-      boxShadow: 'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-      backgroundColor: 'rgb(255, 68, 0)',
-      color: 'white',
-      lineHeight: '1',
-      padding: '0.25em'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: this
-  }, subheading))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "section section--gradient",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 16
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 17
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 18
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "columns",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column is-10 is-offset-1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 20
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 21
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 22
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 23
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 24
     },
     __self: this
   }, mainpitch.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 26
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "subtitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 27
     },
     __self: this
   }, mainpitch.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "columns",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 30
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column is-12",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 31
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "has-text-weight-semibold is-size-2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 32
     },
     __self: this
   }, heading), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 35
     },
     __self: this
   }, description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Features__WEBPACK_IMPORTED_MODULE_4__["default"], {
     gridItems: intro.blurbs,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 38
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "columns",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 39
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column is-12 has-text-centered",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 40
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -89224,34 +89139,34 @@ var IndexPageTemplate = function IndexPageTemplate(_ref) {
     to: "/products",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 41
     },
     __self: this
   }, "See all products"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column is-12",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 46
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "has-text-weight-semibold is-size-2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 47
     },
     __self: this
   }, "Latest stories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BlogRoll__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 50
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column is-12 has-text-centered",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 51
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -89259,16 +89174,13 @@ var IndexPageTemplate = function IndexPageTemplate(_ref) {
     to: "/blog",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 52
     },
     __self: this
   }, "Read more"))))))))));
 };
 IndexPageTemplate.propTypes = {
-  image: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string]),
   title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  heading: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  subheading: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   mainpitch: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
   description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   intro: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
@@ -89282,20 +89194,17 @@ var IndexPage = function IndexPage(_ref2) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 79
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IndexPageTemplate, {
-    image: frontmatter.image,
     title: frontmatter.title,
-    heading: frontmatter.heading,
-    subheading: frontmatter.subheading,
     mainpitch: frontmatter.mainpitch,
     description: frontmatter.description,
     intro: frontmatter.intro,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 80
     },
     __self: this
   }));
@@ -89310,7 +89219,7 @@ IndexPage.propTypes = {
 };
 var _default = IndexPage;
 /* harmony default export */ __webpack_exports__["default"] = (_default);
-var pageQuery = "4066978147";
+var pageQuery = "2070359941";
 ;
 
 (function () {
@@ -89404,10 +89313,10 @@ var ProductPageTemplate = function ProductPageTemplate(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "has-text-weight-bold is-size-1",
     style: {
-      boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-      backgroundColor: '#f40',
-      color: 'white',
-      padding: '1rem'
+      boxShadow: "0.5rem 0 0 #f40, -0.5rem 0 0 #f40",
+      backgroundColor: "#f40",
+      color: "white",
+      padding: "1rem"
     },
     __source: {
       fileName: _jsxFileName,

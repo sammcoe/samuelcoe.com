@@ -18,3 +18,9 @@ config/github.js
 
 # PWA
 sw.*
+
+# Public
+public/
+
+# Cache
+.cache/

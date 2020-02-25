@@ -10,6 +10,12 @@ $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
 
+body
+  background: rgb(245, 245, 245)
+
+.navbar
+  background: rgb(245, 245, 245) !important
+
 .navbar .navbar-menu
   box-shadow:none !important
 
@@ -111,6 +117,36 @@ $menu-label-color: $white-ter
     height: 1em
     vertical-align: middle
     display: inline
+
+// Navbar overrides
+.navbar-menu .navbar-item
+    width: 100px
+    height: 32px
+    justify-content: center
+    border-radius: 20px
+    background: rgb(245, 245, 245)
+    color: rgba(140, 140, 140, 1) !important
+    box-shadow: 2px 2px 4px rgba(0, 122, 255, 0.1), 8px 8px 8px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -2px -2px 2px rgba(255, 255, 255, 1), -8px -8px 8px rgba(255, 255, 255, 1), inset -2px -2px 2px rgba(0, 122, 255, 0.1), inset 2px 2px 2px rgba(255, 255, 255, 1)
+    margin-right: 20px
+    margin-top: 10px
+    transition: all 0.15s
+
+    &:hover
+      color: rgba(255, 149, 0, 1) !important
+      text-shadow: 0px 0px 5px rgba(255, 149, 0, 0.4)
+
+    &:focus-within
+      color: rgba(255, 149, 0, 1) !important
+      text-shadow: 0px 0px 5px rgba(255, 149, 0, 0.4)
+
+    &:active
+      color: rgba(255, 149, 0, 1) !important
+      text-shadow: 0px 0px 5px rgba(255, 149, 0, 0.4)
+      font-size: 0.95em
+      box-shadow: -2px -2px 4px rgba(0, 122, 255, 0.1), 1px 1px 1px white, 2px 2px 2px white, 8px 8px 8px white, inset 2px 2px 4px rgba(0, 122, 255, 0.1), inset 2px 2px 8px rgba(0, 122, 255, 0.1), inset -2px -2px 2px white
+
+.navbar-menu .navbar-item.navbar-icon
+  width: 40px
 
 // blog roll
 .blog-list-item.is-featured
