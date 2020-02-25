@@ -20,7 +20,7 @@ config/github.js
 sw.*
 
 # Public
-public/
+/public/*
 
 # Cache
-.cache/
+/.cache/*
