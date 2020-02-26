@@ -17,7 +17,10 @@ body
   background: rgb(245, 245, 245) !important
 
 .navbar .navbar-menu
-  box-shadow:none !important
+  box-shadow: none
+  background: none
+  padding-top: 10px;
+  padding-bottom: 20px;
 
 .content .taglist
   list-style: none
@@ -119,34 +122,76 @@ $menu-label-color: $white-ter
     display: inline
 
 // Navbar overrides
+.has-text-centered
+  &.navbar-start,&.navbar-end
+    justify-content: center
+    align-items: center
+    display: flex
+    flex-wrap: wrap
+
 .navbar-menu .navbar-item
     width: 100px
     height: 32px
     justify-content: center
     border-radius: 20px
     background: rgb(245, 245, 245)
-    color: rgba(140, 140, 140, 1) !important
-    box-shadow: 2px 2px 4px rgba(0, 122, 255, 0.1), 8px 8px 8px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -2px -2px 2px rgba(255, 255, 255, 1), -8px -8px 8px rgba(255, 255, 255, 1), inset -2px -2px 2px rgba(0, 122, 255, 0.1), inset 2px 2px 2px rgba(255, 255, 255, 1)
-    margin-right: 20px
-    margin-top: 10px
+    color: rgba(0, 122, 255, 0.7) !important
+    box-shadow: 2px 2px 4px rgba(0, 122, 255, 0.1), 8px 8px 8px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -2px -2px 2px rgba(255, 255, 255, 1), -4px -4px 4px rgba(255, 255, 255, 1), -8px -8px 8px rgba(255, 255, 255, 1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px white, inset 0px 0px 0px white, inset 0px 0px 0px white
+    margin: 10px 20px
+    padding: 0
     transition: all 0.15s
+    // border: solid 4px transparent
+    background-clip: padding-box
+
+    @keyframes opacity-cycle
+      0%  { opacity: 0 }
+      50%  { opacity: 1 }
+      100%  { opacity: 0 }
+
+    // &:before,&:after
+    //   content: ""
+    //   z-index: -1
+    //   position: absolute
+    //   top: 0
+    //   right: 0
+    //   bottom: 0
+    //   left: 0
+    //   margin: -3px
+    //   border-radius: inherit
+
+    // &:before
+    //   // background: linear-gradient(to right, rgba(10, 132, 255, 0.2), rgba(0, 122, 255, 0.05))
+    //   box-shadow: 2px 2px 4px rgba(0, 122, 255, 0.1), 8px 8px 8px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -2px -2px 2px rgba(255, 255, 255, 1), -4px -4px 4px rgba(255, 255, 255, 1), -8px -8px 8px rgba(255, 255, 255, 1)
+    //   transition: all 0.25s
+
+    // &:after
+    //   opacity: 0
+    //   // background: linear-gradient(to top, rgba(10, 132, 255, 0.5), rgba(0, 122, 255, 1))
 
     &:hover
-      color: rgba(255, 149, 0, 1) !important
-      text-shadow: 0px 0px 5px rgba(255, 149, 0, 0.4)
+      color: rgba(0, 122, 255, 1) !important
+      text-shadow: 0px 0px 2px rgba(10, 132, 255, 0.4)
+      background-color: rgb(245, 245, 245)
 
     &:focus-within
-      color: rgba(255, 149, 0, 1) !important
-      text-shadow: 0px 0px 5px rgba(255, 149, 0, 0.4)
+      color: rgba(0, 122, 255, 1) !important
+      text-shadow: 0px 0px 5px rgba(10, 132, 255, 0.4)
 
     &:active
-      color: rgba(255, 149, 0, 1) !important
-      text-shadow: 0px 0px 5px rgba(255, 149, 0, 0.4)
+      color: rgba(0, 122, 255, 1) !important
+      text-shadow: 0px 0px 5px rgba(10, 132, 255, 0.4)
       font-size: 0.95em
-      box-shadow: -2px -2px 4px rgba(0, 122, 255, 0.1), 1px 1px 1px white, 2px 2px 2px white, 8px 8px 8px white, inset 2px 2px 4px rgba(0, 122, 255, 0.1), inset 2px 2px 8px rgba(0, 122, 255, 0.1), inset -2px -2px 2px white
+      box-shadow: 0px 0px 0px rgba(0, 122, 255, 0.1), 0px 0px 0px rgba(0, 122, 255, 0.1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), inset 2px 2px 2px rgba(0, 122, 255, 0.1), inset 4px 4px 4px rgba(0, 122, 255, 0.1), inset -1px -1px 1px white, inset -2px -2px 2px white, inset -8px -8px 8px white
+
+      &:before
+        // box-shadow: inset -2px -2px 2px rgba(0, 122, 255, 0.1), inset -4px -4px 4px rgba(0, 122, 255, 0.1), inset 1px 1px 1px white, inset 2px 2px 2px white, inset 8px 8px 8px white
+
+      &:after
+        // background: rgba(10, 132, 255, 0.2)
+        // opacity: 1
 
 .navbar-menu .navbar-item.navbar-icon
-  width: 40px
+  width: 32px
 
 // blog roll
 .blog-list-item.is-featured
