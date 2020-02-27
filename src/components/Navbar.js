@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+import twitter from "../img/social/twitter.svg";
 import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -69,7 +69,17 @@ const Navbar = class extends React.Component {
             <div className="navbar-end has-text-centered">
               <a
                 className="navbar-item navbar-icon"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+                href="https://twitter.com/thesamcoe"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="icon">
+                  <img src={twitter} alt="Twitter" />
+                </span>
+              </a>
+              <a
+                className="navbar-item navbar-icon"
+                href="https://github.com/sammcoe"
                 target="_blank"
                 rel="noopener noreferrer"
               >

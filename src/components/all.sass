@@ -2,11 +2,9 @@
 
 // Config vars
 // Kaldi logo brand color: #FD461E
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
+$primary: rgb(0, 122, 255)
+$primary-invert: whitesmoke
 $body-color: #333
 $black: #2b2523
 
@@ -19,8 +17,8 @@ body
 .navbar .navbar-menu
   box-shadow: none
   background: none
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 10px
+  padding-bottom: 20px
 
 .content .taglist
   list-style: none
@@ -52,30 +50,44 @@ body
   align-items: center
 
 .full-width-image
-    width: 100vw
-    height: 400px
-    background-size: cover
-    background-position: bottom
-    display: flex
-    justify-content: center
-    align-items: center
+  width: 100vw
+  height: 400px
+  background-size: cover
+  background-position: bottom
+  display: flex
+  justify-content: center
+  align-items: center
 
 .btn
-    display: inline-block
-    padding: 12px 16px 10px
-    font-size: 18px
-    font-size: 1rem
-    line-height: 1.25
-    background-color: #fff
-    border-radius: .25rem
-    text-decoration: none
-    font-weight: 700
-    color: #CC3700
-    text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px #CC3700
-    box-shadow: inset 0 0 0 2px #f40
-    -webkit-transition: all .15s ease
-    transition: all .15s ease
+  display: inline-block
+  padding: 12px 16px 10px
+  font-size: 18px
+  font-size: 1rem
+  line-height: 1.25
+  border-radius: 25px
+  background-color: rgb(245, 245, 245)
+  color: $primary !important
+  box-shadow: 2px 2px 4px rgba(0, 122, 255, 0.1), 8px 8px 8px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -2px -2px 2px rgba(255, 255, 255, 1), -4px -4px 4px rgba(255, 255, 255, 1), -8px -8px 8px rgba(255, 255, 255, 1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px white, inset 0px 0px 0px white, inset 0px 0px 0px white
+  border: 2px solid $primary
+  font-weight: 700
+  text-align: center
+  -webkit-transition: all .15s ease
+  transition: all .15s ease
+
+  &:hover
+    color: rgba(0, 122, 255, 1) !important
+    text-shadow: 0px 0px 2px rgba(10, 132, 255, 0.4)
+    background-color: rgb(245, 245, 245)
+
+  &:focus-within
+    color: rgba(0, 122, 255, 1) !important
+    text-shadow: 0px 0px 5px rgba(10, 132, 255, 0.4)
+
+  &:active
+    color: rgba(0, 122, 255, 1) !important
+    text-shadow: 0px 0px 5px rgba(10, 132, 255, 0.4)
+    font-size: 0.95em
+    box-shadow: 0px 0px 0px rgba(0, 122, 255, 0.1), 0px 0px 0px rgba(0, 122, 255, 0.1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), inset 2px 2px 2px rgba(0, 122, 255, 0.1), inset 4px 4px 4px rgba(0, 122, 255, 0.1), inset -1px -1px 1px white, inset -2px -2px 2px white, inset -8px -8px 8px white
 
 .margin-top-0
   margin-top: 0 !important
@@ -94,14 +106,13 @@ footer.footer
   background-color: transparent
 
 //Menu overrides
-$menu-item-color: $white-ter
-$menu-item-hover-color: $black !important
-$menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
-$menu-label-color: $white-ter
-
+// $menu-item-color: $white-ter
+// $menu-item-hover-color: $black !important
+// $menu-item-hover-background-color: $black
+// $menu-item-active-color: $kaldi-red-invert
+// $menu-item-active-background-color:	$kaldi-red-invert
+// $menu-list-border-left: 1px solid $kaldi-red-invert
+// $menu-label-color: $white-ter
 
 .menu-label
   font-size: 1em !important
@@ -112,14 +123,14 @@ $menu-label-color: $white-ter
 .social
   padding: 2em
 .social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
+  padding: .5em .5em .3em .5em
+  border-radius: 1em
+  background-color: $white-ter
+  margin: .5em
+  width: 1em
+  height: 1em
+  vertical-align: middle
+  display: inline
 
 // Navbar overrides
 .has-text-centered
@@ -130,92 +141,80 @@ $menu-label-color: $white-ter
     flex-wrap: wrap
 
 .navbar-menu .navbar-item
-    width: 100px
-    height: 32px
-    justify-content: center
-    border-radius: 20px
-    background: rgb(245, 245, 245)
-    color: rgba(0, 122, 255, 0.7) !important
-    box-shadow: 2px 2px 4px rgba(0, 122, 255, 0.1), 8px 8px 8px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -2px -2px 2px rgba(255, 255, 255, 1), -4px -4px 4px rgba(255, 255, 255, 1), -8px -8px 8px rgba(255, 255, 255, 1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px white, inset 0px 0px 0px white, inset 0px 0px 0px white
-    margin: 10px 20px
-    padding: 0
-    transition: all 0.15s
-    // border: solid 4px transparent
-    background-clip: padding-box
+  width: 100px
+  height: 38px
+  justify-content: center
+  border-radius: 20px
+  background: rgb(245, 245, 245)
+  color: rgba(0, 122, 255, 0.7) !important
+  box-shadow: 2px 2px 4px rgba(0, 122, 255, 0.1), 8px 8px 8px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -2px -2px 2px rgba(255, 255, 255, 1), -4px -4px 4px rgba(255, 255, 255, 1), -8px -8px 8px rgba(255, 255, 255, 1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px white, inset 0px 0px 0px white, inset 0px 0px 0px white
+  margin: 10px 20px
+  padding: 0
+  transition: all 0.15s
+  background-clip: padding-box
 
-    @keyframes opacity-cycle
-      0%  { opacity: 0 }
-      50%  { opacity: 1 }
-      100%  { opacity: 0 }
+  &:hover
+    color: rgba(0, 122, 255, 1) !important
+    text-shadow: 0px 0px 2px rgba(10, 132, 255, 0.4)
+    font-size: 1.015em
+    background-color: rgb(245, 245, 245)
+    box-shadow: 4px 4px 6px rgba(0, 122, 255, 0.1), 10px 10px 10px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -4px -4px 4px rgba(255, 255, 255, 1), -6px -6px 6px rgba(255, 255, 255, 1), -10px -10px 10px rgba(255, 255, 255, 1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px rgba(0, 122, 255, 0.1), inset 0px 0px 0px white, inset 0px 0px 0px white, inset 0px 0px 0px white
 
-    // &:before,&:after
-    //   content: ""
-    //   z-index: -1
-    //   position: absolute
-    //   top: 0
-    //   right: 0
-    //   bottom: 0
-    //   left: 0
-    //   margin: -3px
-    //   border-radius: inherit
+  &:focus-within
+    color: rgba(0, 122, 255, 1) !important
+    text-shadow: 0px 0px 5px rgba(10, 132, 255, 0.4)
 
-    // &:before
-    //   // background: linear-gradient(to right, rgba(10, 132, 255, 0.2), rgba(0, 122, 255, 0.05))
-    //   box-shadow: 2px 2px 4px rgba(0, 122, 255, 0.1), 8px 8px 8px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -2px -2px 2px rgba(255, 255, 255, 1), -4px -4px 4px rgba(255, 255, 255, 1), -8px -8px 8px rgba(255, 255, 255, 1)
-    //   transition: all 0.25s
-
-    // &:after
-    //   opacity: 0
-    //   // background: linear-gradient(to top, rgba(10, 132, 255, 0.5), rgba(0, 122, 255, 1))
-
-    &:hover
-      color: rgba(0, 122, 255, 1) !important
-      text-shadow: 0px 0px 2px rgba(10, 132, 255, 0.4)
-      background-color: rgb(245, 245, 245)
-
-    &:focus-within
-      color: rgba(0, 122, 255, 1) !important
-      text-shadow: 0px 0px 5px rgba(10, 132, 255, 0.4)
-
-    &:active
-      color: rgba(0, 122, 255, 1) !important
-      text-shadow: 0px 0px 5px rgba(10, 132, 255, 0.4)
-      font-size: 0.95em
-      box-shadow: 0px 0px 0px rgba(0, 122, 255, 0.1), 0px 0px 0px rgba(0, 122, 255, 0.1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), inset 2px 2px 2px rgba(0, 122, 255, 0.1), inset 4px 4px 4px rgba(0, 122, 255, 0.1), inset -1px -1px 1px white, inset -2px -2px 2px white, inset -8px -8px 8px white
-
-      &:before
-        // box-shadow: inset -2px -2px 2px rgba(0, 122, 255, 0.1), inset -4px -4px 4px rgba(0, 122, 255, 0.1), inset 1px 1px 1px white, inset 2px 2px 2px white, inset 8px 8px 8px white
-
-      &:after
-        // background: rgba(10, 132, 255, 0.2)
-        // opacity: 1
+  &:active
+    color: rgba(0, 122, 255, 1) !important
+    text-shadow: 0px 0px 5px rgba(10, 132, 255, 0.4)
+    font-size: 0.95em
+    box-shadow: 0px 0px 0px rgba(0, 122, 255, 0.1), 0px 0px 0px rgba(0, 122, 255, 0.1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), 0px 0px 0px rgba(255, 255, 255, 1), inset 2px 2px 2px rgba(0, 122, 255, 0.1), inset 4px 4px 4px rgba(0, 122, 255, 0.1), inset -1px -1px 1px white, inset -2px -2px 2px white, inset -8px -8px 8px white
 
 .navbar-menu .navbar-item.navbar-icon
-  width: 32px
+  width: 38px
+
+  .icon
+    transition: all 0.25s
+
+  &:hover
+    .icon
+      width: 25px
 
 // blog roll
-.blog-list-item.is-featured
-  background-color: #d6400033;
+.blog-list-item
+  box-shadow: 2px 2px 4px rgba(0, 122, 255, 0.1), 8px 8px 8px rgba(0, 122, 255, 0.1), -1px -1px 1px rgba(255, 255, 255, 1), -2px -2px 2px rgba(255, 255, 255, 1), -4px -4px 4px rgba(255, 255, 255, 1), -8px -8px 8px rgba(255, 255, 255, 1), -16px -16px 16px rgba(255, 255, 255, 1) !important
 .blog-list-item header
-  display: flex;
-  margin-bottom: 1em;
+  display: flex
+  margin-bottom: 1em
 .blog-list-item .featured-thumbnail
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
+  flex-basis: 35%
+  margin: 0 1.5em 0 0
 
+// button
+.button.custom
+  background: rgb(0, 122, 255)
+  color: white
+  border-radius: 20px
+  box-shadow: 3px 3px 10px rgba(0, 122, 255, 0.4), -2px -2px 2px white, -4px -4px 4px white, -8px -8px 8px white
+  border: none
+  transition: all 0.25s
+
+  &:hover
+    color: white
+    text-shadow: 0px 0px 1px white
+    box-shadow: 5px 5px 10px rgba(0, 122, 255, 0.3), -4px -4px 4px white, -6px -6px 6px white, -10px -10px 10px white !important
 
 @import "~bulma"
 
-
 // responsiveness
-+tablet-only
+  +tablet-only
   .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
+    flex-basis: 50%
 
-+mobile
+    +mobile
   .blog-list-item header
     display: block
   .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
+    text-align: center
+    max-width: 70%
+    margin: 0 0 1em
