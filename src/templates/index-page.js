@@ -3,27 +3,19 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 
-export const IndexPageTemplate = ({
-  heading,
-  mainpitch,
-  description,
-  intro
-}) => (
+export const IndexPageTemplate = () => (
   <div>
     <section className="section section--gradient">
       <div className="container">
         <div className="content">
-          <div className="column is-12">
-            <h3 className="has-text-weight-semibold is-size-2">Latest posts</h3>
-            <BlogRoll />
-            <div className="column is-12 has-text-centered">
-              <Link className="btn" to="/blog">
-                Read more
-              </Link>
-            </div>
+          <h3 className="has-text-weight-semibold is-size-2">Latest posts</h3>
+          <BlogRoll maxPosts={4} />
+          <div className="column is-12 has-text-centered">
+            <Link className="btn" to="/blog">
+              Read more
+            </Link>
           </div>
         </div>
       </div>
@@ -32,12 +24,7 @@ export const IndexPageTemplate = ({
 );
 
 IndexPageTemplate.propTypes = {
-  title: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array
-  })
+  title: PropTypes.string
 };
 
 const IndexPage = ({ data }) => {
@@ -45,12 +32,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <IndexPageTemplate
-        title={frontmatter.title}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-      />
+      <IndexPageTemplate title={frontmatter.title} />
     </Layout>
   );
 };
@@ -70,25 +52,6 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
       }
     }
   }
