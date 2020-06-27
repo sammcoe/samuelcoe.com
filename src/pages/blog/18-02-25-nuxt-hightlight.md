@@ -6,7 +6,6 @@ featuredpost: false
 description: If you're using Nuxt to create a static generated site to serve up dynamic content-- such as a blog-- the chances are that you're going to be looking for an engine to handle markdown documents with syntax highlighting.
 tags:
   - javascript
-  - web development
   - nuxt
 ---
 

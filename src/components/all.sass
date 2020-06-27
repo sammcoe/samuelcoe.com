@@ -7,6 +7,8 @@ $primary: rgb(0, 122, 255)
 $primary-invert: whitesmoke
 $body-color: #333
 $black: #2b2523
+$red: #d94136
+$yellow: #d9c22b
 
 body
   background: rgb(245, 245, 245)
@@ -216,6 +218,35 @@ footer.footer
   background-color: white
   padding: 20px !important
   border-radius: 10px
+
+// Tags
+.content-tags
+  margin: 10px 0px;
+
+.content-tag
+  padding: 5px 15px 5px 15px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  background: $primary;
+  margin-right: 10px;
+
+  &.javascript
+    background: $yellow;
+
+  &.swift
+    background: $red;
+
+// Apps
+.icon-container
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  padding: 16px;
+
+.app-icon
+  max-height: 250px;
 
 // Footer
 .footer

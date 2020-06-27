@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { WorkPageTemplate } from "../../templates/work-page";
+import { AppsPageTemplate } from "../../templates/apps-page";
 
-const WorkPagePreview = ({ entry, getAsset }) => {
+const AppsPagePreview = ({ entry, getAsset }) => {
   const entryBlurbs = entry.getIn(["data", "intro", "blurbs"]);
   const blurbs = entryBlurbs ? entryBlurbs.toJS() : [];
 
@@ -13,7 +13,7 @@ const WorkPagePreview = ({ entry, getAsset }) => {
   const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : [];
 
   return (
-    <WorkPageTemplate
+    <AppsPageTemplate
       image={getAsset(entry.getIn(["data", "image"]))}
       title={entry.getIn(["data", "title"])}
       heading={entry.getIn(["data", "heading"])}
@@ -46,11 +46,11 @@ const WorkPagePreview = ({ entry, getAsset }) => {
   );
 };
 
-WorkPagePreview.propTypes = {
+AppsPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func
   }),
   getAsset: PropTypes.func
 };
 
-export default WorkPagePreview;
+export default AppsPagePreview;

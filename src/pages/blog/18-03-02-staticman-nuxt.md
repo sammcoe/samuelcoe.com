@@ -6,7 +6,6 @@ featuredpost: false
 description: An important part of incorporating content delivery into your site is a system for readers to leave their comments.  If you're using a static site generator such as Nuxt, you may think your only option is to use something such as Disqus-- but that's not so.
 tags:
   - javascript
-  - web development
   - nuxt
   - vue
 ---

@@ -58,14 +58,14 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/work/index.md"
-        label: "Work Page"
-        name: "work"
+      - file: "src/pages/apps/index.md"
+        label: "Apps Page"
+        name: "apps"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "work-page",
+              default: "apps-page",
             }
           - { label: Title, name: title, widget: string }

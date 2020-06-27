@@ -39,6 +39,28 @@ class BlogRoll extends React.Component {
                           {post.frontmatter.title}
                         </Link>
                         <span> &bull; </span>
+                        <div className="content-tags">
+                          {post.frontmatter.tags.map(tag => {
+                            switch (tag) {
+                              case "javascript":
+                                return (
+                                  <span className="content-tag javascript">
+                                    {tag}
+                                  </span>
+                                );
+                              case "swift":
+                                return (
+                                  <span className="content-tag swift">
+                                    {tag}
+                                  </span>
+                                );
+                              default:
+                                return (
+                                  <span className="content-tag">{tag}</span>
+                                );
+                            }
+                          })}
+                        </div>
                         <span className="subtitle is-size-5 is-block">
                           {post.frontmatter.date}
                         </span>
@@ -90,6 +112,7 @@ export default ({ maxPosts }) => (
                 title
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
+                tags
                 featuredpost
               }
             }

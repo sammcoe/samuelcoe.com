@@ -6,7 +6,6 @@ featuredpost: false
 description: The good news is that it is possible to put together a quick and easy system for adding content to your static generated Nuxt site.  The great news is that it's recommended-- for a number of reasons.
 tags:
   - javascript
-  - web development
   - nuxt
 ---
 

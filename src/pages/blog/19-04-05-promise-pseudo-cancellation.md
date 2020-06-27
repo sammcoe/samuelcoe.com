@@ -7,7 +7,6 @@ featuredimage: /img/apple-touch-icon.png
 description: If you're writing code that causes side-effects based on the result of a Promise, and that code has the potential to no longer be executable after the promise returns, then those promises should be dealt with.
 tags:
   - javascript
-  - web development
 ---
 
 If you're writing code that causes side-effects based on the result of a Promise, and that code has the potential to no longer be executable after the promise returns, then those promises should be dealt with.

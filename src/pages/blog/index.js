@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "../../components/Layout";
 import BlogRoll from "../../components/BlogRoll";
-import "../../styles/synthwave-prism.css";
+import "../../styles/prism-theme.css";
 
 export default class BlogIndexPage extends React.Component {
   render() {

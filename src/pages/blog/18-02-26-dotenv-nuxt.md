@@ -6,7 +6,6 @@ featuredpost: false
 description: A quick and straightforward explanation of using dotenv to handle development environment variables while honoring production environments.
 tags:
   - javascript
-  - web development
   - nuxt
 ---
 
