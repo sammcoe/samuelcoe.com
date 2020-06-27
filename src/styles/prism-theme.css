@@ -12,6 +12,7 @@
 */
 pre[class*="language-"],
 code[class*="language-"] {
+  border-radius: 20px;
   color: #d9dbdb;
   font-size: 13px;
   text-shadow: none;
