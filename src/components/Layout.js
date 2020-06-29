@@ -47,6 +47,9 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix("/")}img/social-image.png`}
         />
+
+        <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:creator" content="@thesamcoe"></meta>
       </Helmet>
       <Navbar />
       <div style={{ minHeight: "calc(100vh - 200px)" }}>{children}</div>
