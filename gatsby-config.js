@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "Samuel Coe's Personal Website",
-    description: "Information from and personal writings of Samuel Coe"
+    description: "Information from and personal writings of Samuel Coe",
+    image: "/img/social-image.png"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
