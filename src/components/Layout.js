@@ -52,8 +52,16 @@ const TemplateWrapper = ({ children }) => {
         <meta name="og:image:width" content="1024"></meta>
         <meta name="og:image:height" content="512"></meta>
 
-        <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:card" content="summary_large_image"></meta>
         <meta name="twitter:creator" content="@thesamcoe"></meta>
+        <meta
+          name="twitter:image"
+          content={`${withPrefix("/")}img/social-image.png`}
+        ></meta>
+        <meta
+          name="twitter:image:alt"
+          content="samuelcoe.com website logo"
+        ></meta>
       </Helmet>
       <Navbar />
       <div style={{ minHeight: "calc(100vh - 200px)" }}>{children}</div>
