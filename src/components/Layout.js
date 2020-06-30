@@ -45,7 +45,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="https://samuelcoe.com" />
         <meta
           property="og:image"
-          content={`${withPrefix("/")}img/social-image.png`}
+          content="https://samuelcoe.com/img/social-image.png"
         />
         <meta name="og:image:alt" content="samuelcoe.com website logo"></meta>
         <meta name="og:image:type" content="image/png"></meta>
@@ -56,7 +56,7 @@ const TemplateWrapper = ({ children }) => {
         <meta name="twitter:creator" content="@thesamcoe"></meta>
         <meta
           name="twitter:image"
-          content={`${withPrefix("/")}img/social-image.png`}
+          content="https://samuelcoe.com/img/social-image.png"
         ></meta>
         <meta
           name="twitter:image:alt"
