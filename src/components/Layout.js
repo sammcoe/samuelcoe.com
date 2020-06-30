@@ -40,13 +40,17 @@ const TemplateWrapper = ({ children }) => {
         />
         <meta name="theme-color" content="#fff" />
 
-        <meta property="og:type" content="business.business" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
+        <meta property="og:url" content="https://samuelcoe.com" />
         <meta
           property="og:image"
           content={`${withPrefix("/")}img/social-image.png`}
         />
+        <meta name="og:image:alt" content="samuelcoe.com website logo"></meta>
+        <meta name="og:image:type" content="image/png"></meta>
+        <meta name="og:image:width" content="1024"></meta>
+        <meta name="og:image:height" content="512"></meta>
 
         <meta name="twitter:card" content="summary"></meta>
         <meta name="twitter:creator" content="@thesamcoe"></meta>
