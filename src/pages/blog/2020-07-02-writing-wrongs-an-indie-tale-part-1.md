@@ -8,7 +8,7 @@ tags:
   - indie
   - iOS
 ---
-### Background
+
 
 In July 2018, just about 2 years ago from the time of writing this, I set out on my app-making journey.
 
@@ -33,8 +33,6 @@ Now, two years later, I’m going on a journey.  I invite anyone reading this to
 Here’s the synopsis by App Store figures in six charts (7/1/19 - 6/20/20):
 
 ![Carte App Store figures from 7/1/19 to 6/20/20](/img/as-figures.png "Carte App Store figures from 7/1/19 to 6/20/20")
-
-
 
 Over the next few weeks, I’m going to add color to the story and attempt to distill my experiences into helpful insights.  Topics I'll cover will include **product development, design, architecture, goal planning, audience, marketting, advertisements, business models, and social media**.  It should be interesting because I’ve yet to see the true efficacy of anything I’ve taken away into my second attempt.
 
