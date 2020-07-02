@@ -5,7 +5,8 @@ date: 2020-07-01T22:53:21.890Z
 description: ' '
 featuredpost: true
 tags:
-  - indie iOS
+  - indie
+  - iOS
 ---
 ### Background
 
