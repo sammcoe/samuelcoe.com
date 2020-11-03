@@ -56,7 +56,10 @@ export const AppsPageTemplate = ({}) => (
                       personalized, flexible meal plan and grocery list are
                       created for you.
                     </p>
-                    <a className="button custom" href="https://cartemeals.com">
+                    <a
+                      className="button custom"
+                      href="https://apps.apple.com/us/app/carte-easy-meal-plans/id1464478828"
+                    >
                       More info →
                     </a>
                   </div>
