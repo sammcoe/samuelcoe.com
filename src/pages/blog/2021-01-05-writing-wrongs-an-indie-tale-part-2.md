@@ -5,7 +5,8 @@ date: 2021-01-05T04:51:39.134Z
 description: ' '
 featuredpost: true
 tags:
-  - indie iOS
+  - indie
+  - iOS
 ---
 Welcome to a long overdue followup to [Part 1 of this series](https://www.samuelcoe.com/blog/2020-07-02-writing-wrongs-an-indie-tale-part-1/). 
 
